@@ -38,20 +38,20 @@ const requestHeaders = {
 }
 
 // API CALL: Query museums & populate Museum Picklist
-const getMuseums = function() {
+const populateMusuemSelect = function() {
     fetch (`${curatedApi}/museums`, {
         method: 'GET',
         headers: requestHeaders
     })
     .then (response => response.json())
     .then (museums => museums.forEach(museum => {
-        populateMusuemSelect(museum)
+        domCreateMuseumSelectOption(museum)
     }))
     .catch (error => console.error(`${error.message}`))
 }
 
 // HELPER: Populate musuem picklist
-const populateMusuemSelect = function(museum) {
+const domCreateMuseumSelectOption = function(museum) {
         // console.log(museum.id, museum.name, museum.slug)
         // console.log(document.querySelector('select#museum-select'))
 
@@ -64,19 +64,19 @@ const populateMusuemSelect = function(museum) {
 }
 
 // API CALL: Query collections & populate collection picklist
-const getCollections = function() {
+const populateCollectionSelect = function() {
     fetch (`${curatedApi}/collections`, {
         method: 'GET',
         headers: requestHeaders
     })
     .then (response => response.json())
     .then (collections => collections.forEach(collection => {
-        populateCollectionSelect(collection)
+        domCreateCollectionSelectOption(collection)
     }))
 }
 
 // HELPER: Populate collection picklist
-const populateCollectionSelect = function(collection) {
+const domCreateCollectionSelectOption = function(collection) {
     let selectForm = document.querySelector('select#collection-select')
     let newOption = document.createElement('option')
     newOption.setAttribute('value',collection.id)
@@ -104,5 +104,5 @@ const searchArtworks = function(curatedApi, searchMuseum = '--All--') {
 // searchArtworks(artworkApi)
 // searchArtworks(artworkApi, 'Tate Britain')
 
-getMuseums()
-getCollections()
+populateMusuemSelect()
+populateCollectionSelect()
