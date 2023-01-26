@@ -1,637 +1,724 @@
 {
-  "artworks": [
-    {
-      "id": 1,
-      "artist": "John Constable",
-      "artist_lifespan": "(1776–1837)",
-      "title": "Cloud Study",
-      "description": "English: Cloud Study, oil painting by John Constable, 1822, Tate Britain",
-      "date": "1822",
-      "medium": "oil",
-      "museum": "Tate Britain",
-      "accession_number": "N06065",
-      "file": {
-        "title": "'Cloud Study', by John Constable, 1822, Tate Britain.JPG",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:%27Cloud_Study%27,_by_John_Constable,_1822,_Tate_Britain.JPG",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 741,
-          "height": 600,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG/741px-%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 548986,
-          "width": 2516,
-          "height": 2036,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1265,
-          "height": 1024,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG/1265px-%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG"
-        }
-      }
-    },
-    {
-      "id": 2,
-      "artist": "John William Waterhouse",
-      "artist_lifespan": "(1849–1917)",
-      "title": "The Lady of Shalott",
-      "date": "1888",
-      "genre": "Arthurian painting",
-      "medium": "oil on canvas",
-      "museum": "Tate Britain",
-      "accession_number": "N01543",
-      "file": {
-        "title": "John William Waterhouse - The Lady of Shalott - Google Art Project edit.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 781,
-          "height": 599,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg/781px-John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 4512004,
-          "width": 4180,
-          "height": 3208,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 982,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg/1280px-John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg"
-        }
-      }
-    },
-    {
-      "id": 3,
-      "artist": "J. M. W. Turner",
-      "artist_lifespan": "(1775–1851)",
-      "title": "English: Disaster at Sea",
-      "description": "English: Probably unfinished",
-      "date": "circa 1835",
-      "genre": "marine art",
-      "medium": "oil on canvas",
-      "museum": "Tate Britain",
-      "accession_number": "N00558 (Tate) NG558 (National Gallery)",
-      "file": {
-        "title": "Joseph Mallord William Turner - A Disaster at Sea - Google Art Project.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 786,
-          "height": 599,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg/786px-Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 3643249,
-          "width": 2755,
-          "height": 2101,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 976,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg/1280px-Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg"
-        }
-      }
-    },
-    {
-      "id": 4,
-      "artist": "Dante Gabriel Rossetti",
-      "artist_lifespan": "(1828–1882)",
-      "title": "Proserpine",
-      "date": "1874",
-      "genre": "portrait",
-      "medium": "oil on canvas",
-      "museum": "Tate Britain",
-      "accession_number": "N05064",
-      "file": {
-        "title": "Dante Gabriel Rossetti - Proserpine - Google Art Project.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 263,
-          "height": 598,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg/263px-Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 948166,
-          "width": 1030,
-          "height": 2343,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 450,
-          "height": 1024,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg/450px-Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg"
-        }
-      }
-    },
-    {
-      "id": 5,
-      "artist": "Philip James de Loutherbourg",
-      "artist_lifespan": "(1740–1812)",
-      "title": "An Avalanche in the Alps",
-      "date": "1803",
-      "medium": "oil on canvas",
-      "museum": "Musée des Beaux-Arts de Strasbourg",
-      "accession_number": "T00772 (Tate Britain)",
-      "file": {
-        "title": "Phillip James De Loutherbourg - An Avalanche in the Alps - Google Art Project.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 547,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg/800px-Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 1274814,
-          "width": 2310,
-          "height": 1580,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 875,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg/1280px-Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg"
-        }
-      }
-    },
-    {
-      "id": 6,
-      "artist": "Vincent van Gogh",
-      "artist_lifespan": "(1853–1890)",
-      "title": "English: La Nuit étoiléeStarry Night",
-      "date": "1888",
-      "genre": "landscape art",
-      "medium": "oil on canvas",
-      "museum": "Musée d'Orsay",
-      "accession_number": "78696",
-      "file": {
-        "title": "Vincent van Gogh - Starry Night - Google Art Project 2.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg",
-        "latest": {
-          "timestamp": "2015-04-07T20:34:14Z",
-          "user": {
-            "id": 269373,
-            "name": "Paris 16"
+  "artworks":
+  [
+      {
+          "id": 1,
+          "artist": "John Constable",
+          "artist_lifespan": "(1776–1837)",
+          "title": "Cloud Study",
+          "description": "English: Cloud Study, oil painting by John Constable, 1822, Tate Britain",
+          "date": "1822",
+          "medium": "oil",
+          "museum": "Tate Britain",
+          "accession_number": "N06065",
+          "file":
+          {
+              "title": "'Cloud Study', by John Constable, 1822, Tate Britain.JPG",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:%27Cloud_Study%27,_by_John_Constable,_1822,_Tate_Britain.JPG",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 741,
+                  "height": 600,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG/741px-%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 548986,
+                  "width": 2516,
+                  "height": 2036,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1265,
+                  "height": 1024,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG/1265px-%27Cloud_Study%27%2C_by_John_Constable%2C_1822%2C_Tate_Britain.JPG"
+              }
           }
-        },
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 776,
-          "height": 600,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg/776px-Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 10202210,
-          "width": 4331,
-          "height": 3346,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 989,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg/1280px-Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg"
-        }
+      },
+      {
+          "id": 2,
+          "artist": "John William Waterhouse",
+          "artist_lifespan": "(1849–1917)",
+          "title": "The Lady of Shalott",
+          "date": "1888",
+          "genre": "Arthurian painting",
+          "medium": "oil on canvas",
+          "museum": "Tate Britain",
+          "accession_number": "N01543",
+          "file":
+          {
+              "title": "John William Waterhouse - The Lady of Shalott - Google Art Project edit.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 781,
+                  "height": 599,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg/781px-John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 4512004,
+                  "width": 4180,
+                  "height": 3208,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 982,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg/1280px-John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg"
+              }
+          }
+      },
+      {
+          "id": 3,
+          "artist": "J. M. W. Turner",
+          "artist_lifespan": "(1775–1851)",
+          "title": "English: Disaster at Sea",
+          "description": "English: Probably unfinished",
+          "date": "circa 1835",
+          "genre": "marine art",
+          "medium": "oil on canvas",
+          "museum": "Tate Britain",
+          "accession_number": "N00558 (Tate) NG558 (National Gallery)",
+          "file":
+          {
+              "title": "Joseph Mallord William Turner - A Disaster at Sea - Google Art Project.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 786,
+                  "height": 599,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg/786px-Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 3643249,
+                  "width": 2755,
+                  "height": 2101,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 976,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg/1280px-Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg"
+              }
+          }
+      },
+      {
+          "id": 4,
+          "artist": "Dante Gabriel Rossetti",
+          "artist_lifespan": "(1828–1882)",
+          "title": "Proserpine",
+          "date": "1874",
+          "genre": "portrait",
+          "medium": "oil on canvas",
+          "museum": "Tate Britain",
+          "accession_number": "N05064",
+          "file":
+          {
+              "title": "Dante Gabriel Rossetti - Proserpine - Google Art Project.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 263,
+                  "height": 598,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg/263px-Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 948166,
+                  "width": 1030,
+                  "height": 2343,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 450,
+                  "height": 1024,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg/450px-Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg"
+              }
+          }
+      },
+      {
+          "id": 5,
+          "artist": "Philip James de Loutherbourg",
+          "artist_lifespan": "(1740–1812)",
+          "title": "An Avalanche in the Alps",
+          "date": "1803",
+          "medium": "oil on canvas",
+          "museum": "Musée des Beaux-Arts de Strasbourg",
+          "accession_number": "T00772 (Tate Britain)",
+          "file":
+          {
+              "title": "Phillip James De Loutherbourg - An Avalanche in the Alps - Google Art Project.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 547,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg/800px-Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 1274814,
+                  "width": 2310,
+                  "height": 1580,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 875,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg/1280px-Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg"
+              }
+          }
+      },
+      {
+          "id": 6,
+          "artist": "Vincent van Gogh",
+          "artist_lifespan": "(1853–1890)",
+          "title": "English: La Nuit étoiléeStarry Night",
+          "date": "1888",
+          "genre": "landscape art",
+          "medium": "oil on canvas",
+          "museum": "Musée d'Orsay",
+          "accession_number": "78696",
+          "file":
+          {
+              "title": "Vincent van Gogh - Starry Night - Google Art Project 2.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg",
+              "latest":
+              {
+                  "timestamp": "2015-04-07T20:34:14Z",
+                  "user":
+                  {
+                      "id": 269373,
+                      "name": "Paris 16"
+                  }
+              },
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 776,
+                  "height": 600,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg/776px-Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 10202210,
+                  "width": 4331,
+                  "height": 3346,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 989,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg/1280px-Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg"
+              }
+          }
+      },
+      {
+          "id": 7,
+          "artist": "John Singer Sargent",
+          "artist_lifespan": "(1856–1925)",
+          "title": "Carnation, Lily, Lily and Rose",
+          "date": "circa 1885",
+          "genre": "genre art",
+          "medium": "oil on canvas",
+          "museum": "Tate Britain",
+          "accession_number": "N01615",
+          "file":
+          {
+              "title": "John Singer Sargent - Carnation, Lily, Lily, Rose - Google Art Project.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:John_Singer_Sargent_-_Carnation,_Lily,_Lily,_Rose_-_Google_Art_Project.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 531,
+                  "height": 600,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg/531px-John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 8693239,
+                  "width": 3330,
+                  "height": 3762,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 906,
+                  "height": 1024,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg/906px-John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg"
+              }
+          }
+      },
+      {
+          "id": 8,
+          "artist": "Philip James de Loutherbourg",
+          "artist_lifespan": "(1740–1812)",
+          "title": "Landscape with animals",
+          "date": "1767",
+          "medium": "oil on canvas",
+          "museum": "Musée des Beaux-Arts de Strasbourg",
+          "accession_number": "1062 (Musée des Beaux-Arts de Strasbourg)",
+          "file":
+          {
+              "title": "Philippe-Jacques Loutherbourg - Musée des Bx-Arts Strasbourg-Troupeau.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 527,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg/800px-Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 5386893,
+                  "width": 4000,
+                  "height": 2634,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 843,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg/1280px-Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg"
+              }
+          }
+      },
+      {
+          "id": 9,
+          "artist": "Hans Memling",
+          "artist_lifespan": "(circa 1433 –1494)",
+          "title": "Triptych of Earthly Vanity and Divine Salvation",
+          "date": "circa 1485",
+          "medium": "oil on oak wood",
+          "museum": "Musée des Beaux-Arts de Strasbourg",
+          "file":
+          {
+              "title": "Memling Vanity and Salvation.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Memling_Vanity_and_Salvation.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 390,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Memling_Vanity_and_Salvation.jpg/800px-Memling_Vanity_and_Salvation.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 283307,
+                  "width": 1333,
+                  "height": 650,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Memling_Vanity_and_Salvation.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 624,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Memling_Vanity_and_Salvation.jpg/1280px-Memling_Vanity_and_Salvation.jpg"
+              }
+          }
+      },
+      {
+          "id": 10,
+          "artist": "Martin van Heemskerck",
+          "title": "Gideon",
+          "description": "Gideon; Adam and Eve (circa 1550), oils on wood by Martin van Heemskerck, at the Museum of Fine Arts in Strasbourg. Originally, a painting (lost) with the Virgin was placed between the two panels",
+          "date": "29 September 2010",
+          "museum": "Musée des Beaux-Arts de Strasbourg",
+          "file":
+          {
+              "title": "M.v.H. M.d.B.A. Strasbourg - Gideon.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 179,
+                  "height": 597,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg/179px-M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 1626794,
+                  "width": 932,
+                  "height": 3109,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 306,
+                  "height": 1021,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg/306px-M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg"
+              }
+          }
+      },
+      {
+          "id": 11,
+          "artist": "Gustave Adolphe Kirstein",
+          "artist_lifespan": "(1812-1878)",
+          "title": "L'Orage",
+          "description": "Français : Adolphe Kirstein, L'Orage (1872)Huile sur toileMusée des Beaux-Arts de Strasbourg. Inv. 1378.Acquis en 1934",
+          "date": "1872",
+          "museum": "Musée des Beaux-Arts de Strasbourg",
+          "file":
+          {
+              "title": "Adolphe Kirstein-L'Orage-Musée des Beaux-Arts de Strasbourg.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 550,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg/800px-Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 1063357,
+                  "width": 2865,
+                  "height": 1969,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 880,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg/1280px-Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg"
+              }
+          }
+      },
+      {
+          "id": 12,
+          "artist": "Paul Cézanne",
+          "artist_lifespan": "(1839–1906)",
+          "title": "Woman with a Coffeepot",
+          "date": "Circa 1895",
+          "genre": "portrait",
+          "medium": "oil on canvas",
+          "museum": "Musée d'Orsay",
+          "accession_number": "1485",
+          "file":
+          {
+              "title": "Paul Cézanne - Woman with a Coffeepot - Google Art Project.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 435,
+                  "height": 599,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg/435px-Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 8624611,
+                  "width": 4062,
+                  "height": 5592,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 743,
+                  "height": 1023,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg/743px-Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg"
+              }
+          }
+      },
+      {
+          "id": 13,
+          "artist": "Claude Monet",
+          "artist_lifespan": "(1840–1926)",
+          "title": "The Magpie",
+          "date": "(1868 - 1869)",
+          "genre": "landscape art",
+          "medium": "oil on canvas",
+          "museum": "Musée d'Orsay",
+          "accession_number": "715",
+          "file":
+          {
+              "title": "Claude Monet - The Magpie - Google Art Project.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 543,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/800px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 8758662,
+                  "width": 4289,
+                  "height": 2909,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 868,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/1280px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg"
+              }
+          }
+      },
+      {
+          "id": 14,
+          "artist": "Henri Gervex",
+          "artist_lifespan": "(1852–1929)",
+          "title": "A Session of the Painting Jury",
+          "date": "before 1885",
+          "genre": "self-portrait",
+          "medium": "oil on canvas",
+          "museum": "Musée d'Orsay",
+          "accession_number": "9137",
+          "file":
+          {
+              "title": "Henri Gervex - A Session of the Painting Jury - Google Art Project.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 567,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg/800px-Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 8412554,
+                  "width": 7662,
+                  "height": 5432,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 907,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg/1280px-Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg"
+              }
+          }
+      },
+      {
+          "id": 15,
+          "artist": "Gustave Maincent",
+          "artist_lifespan": "(1848-1897)",
+          "title": "The Seine is taken – Chatou",
+          "description": "Français : Le grand pont entre l'île et Chatou pris dans la glace.",
+          "date": "1895",
+          "museum": "Musée d'Orsay",
+          "file":
+          {
+              "title": "La Seine est prise – Chatou, 1895, Gustave Maincent, musée d'Orsay.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:La_Seine_est_prise_%E2%80%93_Chatou,_1895,_Gustave_Maincent,_mus%C3%A9e_d%27Orsay.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 489,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg/800px-La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 534788,
+                  "width": 1291,
+                  "height": 789,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 782,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg/1280px-La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg"
+              }
+          }
+      },
+      {
+          "id": 16,
+          "artist": "André Devambez",
+          "artist_lifespan": "(1867–1944)",
+          "title": "The Only Bird Flying Above Clouds",
+          "description": "Français : Le seul oiseau qui vole au dessus des nuages (1910) - Tableau d'André Devambez (1867-1944) se trouvant au Musée d'Orsay à Paris.",
+          "date": "1910",
+          "genre": "genre art",
+          "medium": "oil on canvas",
+          "museum": "Musée d'Orsay",
+          "accession_number": "RF 2006 24 (Musée d'Orsay)",
+          "file":
+          {
+              "title": "André Devambez - Le seul oiseau qui vole au dessus des nuages - 1910 - Musee d'Orsay.jpg",
+              "file_description_url": "//commons.wikimedia.org/wiki/File:Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg",
+              "preferred":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 800,
+                  "height": 521,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg/800px-Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg"
+              },
+              "original":
+              {
+                  "mediatype": "BITMAP",
+                  "size": 804544,
+                  "width": 2771,
+                  "height": 1804,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg"
+              },
+              "thumbnail":
+              {
+                  "mediatype": "BITMAP",
+                  "size": null,
+                  "width": 1280,
+                  "height": 833,
+                  "duration": null,
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg/1280px-Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg"
+              }
+          }
       }
-    },
-    {
-      "id": 7,
-      "artist": "John Singer Sargent",
-      "artist_lifespan": "(1856–1925)",
-      "title": "Carnation, Lily, Lily and Rose",
-      "date": "circa 1885",
-      "genre": "genre art",
-      "medium": "oil on canvas",
-      "museum": "Tate Britain",
-      "accession_number": "N01615",
-      "file": {
-        "title": "John Singer Sargent - Carnation, Lily, Lily, Rose - Google Art Project.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:John_Singer_Sargent_-_Carnation,_Lily,_Lily,_Rose_-_Google_Art_Project.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 531,
-          "height": 600,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg/531px-John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 8693239,
-          "width": 3330,
-          "height": 3762,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 906,
-          "height": 1024,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg/906px-John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg"
-        }
-      }
-    },
-    {
-      "id": 8,
-      "artist": "Philip James de Loutherbourg",
-      "artist_lifespan": "(1740–1812)",
-      "title": "Landscape with animals",
-      "date": "1767",
-      "medium": "oil on canvas",
-      "museum": "Musée des Beaux-Arts de Strasbourg",
-      "accession_number": "1062 (Musée des Beaux-Arts de Strasbourg)",
-      "file": {
-        "title": "Philippe-Jacques Loutherbourg - Musée des Bx-Arts Strasbourg-Troupeau.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 527,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg/800px-Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 5386893,
-          "width": 4000,
-          "height": 2634,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 843,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg/1280px-Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg"
-        }
-      }
-    },
-    {
-      "id": 9,
-      "artist": "Hans Memling",
-      "artist_lifespan": "(circa 1433 –1494)",
-      "title": "Triptych of Earthly Vanity and Divine Salvation",
-      "date": "circa 1485",
-      "medium": "oil on oak wood",
-      "museum": "Musée des Beaux-Arts de Strasbourg",
-      "file": {
-        "title": "Memling Vanity and Salvation.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Memling_Vanity_and_Salvation.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 390,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Memling_Vanity_and_Salvation.jpg/800px-Memling_Vanity_and_Salvation.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 283307,
-          "width": 1333,
-          "height": 650,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Memling_Vanity_and_Salvation.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 624,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Memling_Vanity_and_Salvation.jpg/1280px-Memling_Vanity_and_Salvation.jpg"
-        }
-      }
-    },
-    {
-      "id": 10,
-      "artist": "Martin van Heemskerck",
-      "title": "Gideon",
-      "description": "Gideon; Adam and Eve (circa 1550), oils on wood by Martin van Heemskerck, at the Museum of Fine Arts in Strasbourg. Originally, a painting (lost) with the Virgin was placed between the two panels",
-      "date": "29 September 2010",
-      "museum": "Musée des Beaux-Arts de Strasbourg",
-      "file": {
-        "title": "M.v.H. M.d.B.A. Strasbourg - Gideon.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 179,
-          "height": 597,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg/179px-M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 1626794,
-          "width": 932,
-          "height": 3109,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 306,
-          "height": 1021,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg/306px-M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg"
-        }
-      }
-    },
-    {
-      "id": 11,
-      "artist": "Gustave Adolphe Kirstein",
-      "artist_lifespan": "(1812-1878)",
-      "title": "L'Orage",
-      "description": "Français : Adolphe Kirstein, L'Orage (1872)Huile sur toileMusée des Beaux-Arts de Strasbourg. Inv. 1378.Acquis en 1934",
-      "date": "1872",
-      "museum": "Musée des Beaux-Arts de Strasbourg",
-      "file": {
-        "title": "Adolphe Kirstein-L'Orage-Musée des Beaux-Arts de Strasbourg.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 550,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg/800px-Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 1063357,
-          "width": 2865,
-          "height": 1969,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 880,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg/1280px-Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg"
-        }
-      }
-    },
-    {
-      "id": 12,
-      "artist": "Paul Cézanne",
-      "artist_lifespan": "(1839–1906)",
-      "title": "Woman with a Coffeepot",
-      "date": "Circa 1895",
-      "genre": "portrait",
-      "medium": "oil on canvas",
-      "museum": "Musée d'Orsay",
-      "accession_number": "1485",
-      "file": {
-        "title": "Paul Cézanne - Woman with a Coffeepot - Google Art Project.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 435,
-          "height": 599,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg/435px-Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 8624611,
-          "width": 4062,
-          "height": 5592,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 743,
-          "height": 1023,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg/743px-Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg"
-        }
-      }
-    },
-    {
-      "id": 13,
-      "artist": "Claude Monet",
-      "artist_lifespan": "(1840–1926)",
-      "title": "The Magpie",
-      "date": "(1868 - 1869)",
-      "genre": "landscape art",
-      "medium": "oil on canvas",
-      "museum": "Musée d'Orsay",
-      "accession_number": "715",
-      "file": {
-        "title": "Claude Monet - The Magpie - Google Art Project.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 543,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/800px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 8758662,
-          "width": 4289,
-          "height": 2909,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 868,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/1280px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg"
-        }
-      }
-    },
-    {
-      "id": 14,
-      "artist": "Henri Gervex",
-      "artist_lifespan": "(1852–1929)",
-      "title": "A Session of the Painting Jury",
-      "date": "before 1885",
-      "genre": "self-portrait",
-      "medium": "oil on canvas",
-      "museum": "Musée d'Orsay",
-      "accession_number": "9137",
-      "file": {
-        "title": "Henri Gervex - A Session of the Painting Jury - Google Art Project.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 567,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg/800px-Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 8412554,
-          "width": 7662,
-          "height": 5432,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 907,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg/1280px-Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg"
-        }
-      }
-    },
-    {
-      "id": 15,
-      "artist": "Gustave Maincent",
-      "artist_lifespan": "(1848-1897)",
-      "title": "The Seine is taken – Chatou",
-      "description": "Français : Le grand pont entre l'île et Chatou pris dans la glace.",
-      "date": "1895",
-      "museum": "Musée d'Orsay",
-      "file": {
-        "title": "La Seine est prise – Chatou, 1895, Gustave Maincent, musée d'Orsay.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:La_Seine_est_prise_%E2%80%93_Chatou,_1895,_Gustave_Maincent,_mus%C3%A9e_d%27Orsay.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 489,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg/800px-La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 534788,
-          "width": 1291,
-          "height": 789,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 782,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg/1280px-La_Seine_est_prise_%E2%80%93_Chatou%2C_1895%2C_Gustave_Maincent%2C_mus%C3%A9e_d%27Orsay.jpg"
-        }
-      }
-    },
-    {
-      "id": 16,
-      "artist": "André Devambez",
-      "artist_lifespan": "(1867–1944)",
-      "title": "The Only Bird Flying Above Clouds",
-      "description": "Français : Le seul oiseau qui vole au dessus des nuages (1910) - Tableau d'André Devambez (1867-1944) se trouvant au Musée d'Orsay à Paris.",
-      "date": "1910",
-      "genre": "genre art",
-      "medium": "oil on canvas",
-      "museum": "Musée d'Orsay",
-      "accession_number": "RF 2006 24 (Musée d'Orsay)",
-      "file": {
-        "title": "André Devambez - Le seul oiseau qui vole au dessus des nuages - 1910 - Musee d'Orsay.jpg",
-        "file_description_url": "//commons.wikimedia.org/wiki/File:Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg",
-        "preferred": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 800,
-          "height": 521,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg/800px-Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg"
-        },
-        "original": {
-          "mediatype": "BITMAP",
-          "size": 804544,
-          "width": 2771,
-          "height": 1804,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg"
-        },
-        "thumbnail": {
-          "mediatype": "BITMAP",
-          "size": null,
-          "width": 1280,
-          "height": 833,
-          "duration": null,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg/1280px-Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg"
-        }
-      }
-    }
   ],
-  "collections": [
-    {
-      "id": 1,
-      "name": "Default",
-      "artworks": [
-        1,
-        2,
-        3
-      ]
-    }
+  "museums":
+  [
+      {
+          "id": 1,
+          "name": "Tate Britain",
+          "slug": "tate"
+      },
+      {
+          "id": 2,
+          "name": "Musée des Beaux-Arts de Strasbourg",
+          "slug": "strasbourg"
+      },
+      {
+          "id": 3,
+          "name": "Musée d'Orsay",
+          "slug": "dorsay"
+      }
+  ],
+  "collections":
+  [
+      {
+          "id": 1,
+          "name": "Default",
+          "artworks":
+          [
+              1,
+              2,
+              3
+          ]
+      }
   ]
 }

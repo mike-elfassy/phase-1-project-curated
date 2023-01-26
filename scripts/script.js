@@ -27,23 +27,7 @@ console.log('Hello World')
 // CODE STARTS HERE
 
 // Globals Variables
-let museumList = [
-    { 
-        name:'--All--',
-        value:''
-    },
-    {
-        name: 'Tate Britain',
-        value: 'tate'
-    },
-    {
-        name:'Musée des Beaux-Arts de Strasbourg',
-        value: 'strasbourg'
-    },
-    {
-        name: "Musée d'Orsay",
-        value: 'dorsay'
-    }]
+let museumList = []
 let collectionList = [1]
 
 // API Globals
@@ -53,26 +37,37 @@ const requestHeaders = {
     'Accept': 'application/json'
 }
 
+// Populate Museum Picklist
+const getMuseums = function() {
+    fetch (`${artworkApi}/museums`, {
+        method: 'GET',
+        headers: requestHeaders
+    })
+    .then (response => response.json())
+    .then (museums => museums.forEach(museum => {
+        populateMusuemSelect(museum)
+    }))
+    .catch (error => console.error(`${error.message}`))
+}
+
+
 // Populate Artwork filter
-const populateArtworkSelect = function(museumList) {
-    museumList.forEach(museum => {
-        console.log(museum.name, museum.value)
+const populateMusuemSelect = function(museum) {
+        console.log(museum.id, museum.name, museum.slug)
         console.log(document.querySelector('select#museum-select'))
 
         let selectForm = document.querySelector('select#museum-select')
         let newOption = document.createElement('option')
-        newOption.setAttribute('value',museum.value)
+        newOption.setAttribute('value',museum.slug)
         newOption.innerText = museum.name
         
         selectForm.appendChild(newOption)
-
-    })
 }
 
 // API Call: Search & return array of artworks
 const searchArtworks = function(artworkApi, searchMuseum = '--All--') {
     let searchQuery = ''
-    if(searchMuseum !== '--All--') {searchQuery = `?museum=${searchMuseum}`}
+    if (searchMuseum !== '--All--') {searchQuery = `?museum=${searchMuseum}`}
 
     fetch (`${artworkApi}/artworks${searchQuery}`, {
         method: 'GET',
@@ -88,4 +83,4 @@ const searchArtworks = function(artworkApi, searchMuseum = '--All--') {
 // searchArtworks(artworkApi)
 // searchArtworks(artworkApi, 'Tate Britain')
 
-populateArtworkSelect(museumList)
+getMuseums()
