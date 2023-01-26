@@ -5,9 +5,66 @@
     <meta name="viewport" content="width=device-width">
     <title>Curated</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <script defer src="./scripts/index.js"></script>
+    <script defer src="./scripts/script.js"></script>
 </head>
     <body>
-
+        <div id="app-bar">
+            <h1>Curated</h1>
+        </div>
+        <div id="gallery" class="card">
+            <h1>Gallery</h1>
+        </div>
+        <div id="collections">
+            <div class="collection-header">
+                <h1 class="collection-title">Collections</h1>
+                <button class="add-collection">+</button>
+            </div>
+            <div class="collection-container">
+                <div class="collection-header collection-subheader">
+                    <h2 class="collection-title collection-subheader">Collection Grid 1 (Saved)</h2>
+                    <button class="rename-collection">Edit</button>
+                    <button class="delete-collection">X</button>
+                </div>
+                <div class="collection-grid">
+                    <div class="collection-item">
+                        <div class="collection-item-image">
+                            <img class="collection-item-image" src="https://via.placeholder.com/50/FF00000.jpg?text=1">
+                        </div>
+                        <div class="collection-item-detail">
+                            <div class="collection-item-detail-rating">☆☆☆☆☆</div>
+                            <button class="delete-button">X</button>
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <div class="collection-item-image">
+                            <img class="collection-item-image" src="https://via.placeholder.com/50/FF00000.jpg?text=1">
+                        </div>
+                        <div class="collection-item-detail">
+                            <div class="collection-item-detail-rating">☆☆☆☆☆</div>
+                            <button class="delete-button">X</button>
+                        </div>
+                    </div>
+                    <div class="collection-item">
+                        <div class="collection-item-image">
+                            <img class="collection-item-image" src="https://via.placeholder.com/50/FF00000.jpg?text=1">
+                        </div>
+                        <div class="collection-item-detail">
+                            <div class="collection-item-detail-rating">☆☆☆☆☆</div>
+                            <button class="delete-button">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collection-container">
+                <h1>Collection Grid 2 (Best of the Tate)</h1>
+                <div class="collection-grid">
+                    <div class="collection-item">Art 1</div>
+                    <div class="collection-item">Art 2</div>
+                    <div class="collection-item">Art 3</div>
+                    <div class="collection-item">Art 4</div>
+                    <div class="collection-item">Art 5</div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
