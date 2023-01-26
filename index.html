@@ -12,16 +12,75 @@
             <h1>Curated</h1>
         </div>
         <div id="gallery" class="card">
-            <h1>Gallery</h1>
+            <!-- <div class="header gallery-header">
+                <h1 class="title">gallery</h1>
+            </div> -->
+            <div class="gallery-grid">
+                <div id="gallery-left">
+                    <div class="gallery-left-50">
+                        <h2>Filter Artwork</h2>
+                        <label for="musuem-select">Choose a Musesum:</label>
+                        <select name="musuem" id="museum-select">
+                            <option value="">--All--</option>
+                            <option value="tate-britain">Tate Britain</option>
+                            <option value="strasbourg-museum-of-fine-arts">Musée des Beaux-Arts de Strasbourg</option>
+                            <option value="musee-dorsay">Musée d'Orsay</option>
+                        </select>
+                    </div>
+                    <div class="gallery-left-50">
+                        <h2>Default Collection</h2>
+                        <label for="collection-select">Choose a Collection:</label>
+                        <select name="collection" id="collection-select">
+                            <option value="1">Default</option>
+                            <option value="2">My Personal Favs</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="gallery-middle">
+                    <div class="header">The Magpie</div>
+                    <div id="artwork-hero">
+                        <img class="artwork-hero" src="https://via.placeholder.com/800x550/FF00000.jpg?text=1">
+                    </div>
+                    <div id="artwork-nav-grid">
+                        <div id="artwork-nav-left" class="artwork-nav-left-right">
+                            <button class="left-right-button">←</button>
+                        </div>
+                        <div id="artwork-nav-rating">
+                            <!-- <label for="rating-select">rating</label> -->
+                            <select name="rating" id="rating-select">
+                                <option value="0">☆☆☆☆☆</option>
+                                <option value="1">★☆☆☆☆</option>
+                                <option value="2">★★☆☆☆</option>
+                                <option value="3">★★★☆☆</option>
+                                <option value="4">★★★★☆</option>
+                                <option value="5">★★★★★</option>
+                            </select>
+                        </div>
+                        <div id="artwork-nav-save">
+                            <button id="save-artwork">Save to collection</button>
+                        </div>
+                        <div id="artwork-nav-right" class="artwork-nav-left-right">
+                            <button class="left-right-button">→</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="gallery-right">
+                    <h2>Artwork Info</h2>
+                    <ul>
+                        <li><strong>Musesum:</strong> Tate</li>
+                        <li><strong>Year:</strong> 1874</li>
+                    </ul>
+                </div>
+            </div>  
         </div>
         <div id="collections">
-            <div class="collection-header">
-                <h1 class="collection-title">Collections</h1>
+            <div class="header">
+                <h1 class="title">Collections</h1>
                 <button class="add-collection">+</button>
             </div>
             <div class="collection-container">
-                <div class="collection-header collection-subheader">
-                    <h2 class="collection-title collection-subheader">Collection Grid 1 (Saved)</h2>
+                <div class="header subheader">
+                    <h2 class="collection-title collection-subheader">Collection Grid 1 (Default)</h2>
                     <button class="rename-collection">Edit</button>
                     <button class="delete-collection">X</button>
                 </div>
@@ -56,7 +115,7 @@
                 </div>
             </div>
             <div class="collection-container">
-                <h1>Collection Grid 2 (Best of the Tate)</h1>
+                <h1>Collection Grid 2 (My Personal Favs)</h1>
                 <div class="collection-grid">
                     <div class="collection-item">Art 1</div>
                     <div class="collection-item">Art 2</div>

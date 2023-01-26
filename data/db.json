@@ -626,7 +626,7 @@
   "collections": [
     {
       "id": 1,
-      "name": "Saved",
+      "name": "Default",
       "artworks": [
         1,
         2,
