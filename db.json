@@ -713,12 +713,17 @@
       {
           "id": 1,
           "name": "Default",
-          "artworks":
-          [
-              1,
-              2,
-              3
-          ]
-      }
+          "artworks":[]
+      },
+      {
+        "id": 2,
+        "name": "My Personal Favs",
+        "artworks":
+        [
+            13,
+            2,
+            5
+        ]
+    }
   ]
 }

@@ -31,15 +31,15 @@ let museumList = []
 let collectionList = [1]
 
 // API Globals
-const artworkApi = 'http://localhost:3000'
+const curatedApi = 'http://localhost:3000'
 const requestHeaders = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 }
 
-// Populate Museum Picklist
+// API CALL: Query museums & populate Museum Picklist
 const getMuseums = function() {
-    fetch (`${artworkApi}/museums`, {
+    fetch (`${curatedApi}/museums`, {
         method: 'GET',
         headers: requestHeaders
     })
@@ -50,11 +50,10 @@ const getMuseums = function() {
     .catch (error => console.error(`${error.message}`))
 }
 
-
-// Populate Artwork filter
+// HELPER: Populate musuem picklist
 const populateMusuemSelect = function(museum) {
-        console.log(museum.id, museum.name, museum.slug)
-        console.log(document.querySelector('select#museum-select'))
+        // console.log(museum.id, museum.name, museum.slug)
+        // console.log(document.querySelector('select#museum-select'))
 
         let selectForm = document.querySelector('select#museum-select')
         let newOption = document.createElement('option')
@@ -64,12 +63,34 @@ const populateMusuemSelect = function(museum) {
         selectForm.appendChild(newOption)
 }
 
-// API Call: Search & return array of artworks
-const searchArtworks = function(artworkApi, searchMuseum = '--All--') {
+// API CALL: Query collections & populate collection picklist
+const getCollections = function() {
+    fetch (`${curatedApi}/collections`, {
+        method: 'GET',
+        headers: requestHeaders
+    })
+    .then (response => response.json())
+    .then (collections => collections.forEach(collection => {
+        populateCollectionSelect(collection)
+    }))
+}
+
+// HELPER: Populate collection picklist
+const populateCollectionSelect = function(collection) {
+    let selectForm = document.querySelector('select#collection-select')
+    let newOption = document.createElement('option')
+    newOption.setAttribute('value',collection.id)
+    newOption.innerText = collection.name
+    
+    selectForm.appendChild(newOption)
+}
+
+// API CALL: Search & return array of artworks
+const searchArtworks = function(curatedApi, searchMuseum = '--All--') {
     let searchQuery = ''
     if (searchMuseum !== '--All--') {searchQuery = `?museum=${searchMuseum}`}
 
-    fetch (`${artworkApi}/artworks${searchQuery}`, {
+    fetch (`${curatedApi}/artworks${searchQuery}`, {
         method: 'GET',
         headers: requestHeaders
     })
@@ -84,3 +105,4 @@ const searchArtworks = function(artworkApi, searchMuseum = '--All--') {
 // searchArtworks(artworkApi, 'Tate Britain')
 
 getMuseums()
+getCollections()
