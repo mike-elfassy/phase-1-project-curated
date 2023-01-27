@@ -127,8 +127,8 @@ const populateHero = function(artworks, arrIndex = 0) {
 
 // HELPER: Populate Hero Info (right pane) based on artwork
 const populateHeroInfo = function(artwork) {
-    
-    // Iterate li elemnts
+
+    // Iterate li elements
     const createListItem = function(keyText, valText) {
         let liElement = document.createElement('li')
         let strongElement = document.createElement('strong')
@@ -139,6 +139,9 @@ const populateHeroInfo = function(artwork) {
 
         document.getElementById('artwork-info-list').appendChild(liElement)
     }
+
+    // Delete exisiting li elements
+    document.getElementById('artwork-info-list').innerHTML = ''
 
     // Can enhance this to iterate over object
     createListItem('Artist: ', `${artwork.artist} ${artwork.artist_lifespan}`)
