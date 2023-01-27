@@ -34,10 +34,6 @@ const requestHeaders = {
     'Accept': 'application/json'
 }
 
-
-
-
-
 // API CALL: Query museums & populate Museum Picklist
 const populateMusuemSelect = function() {
     fetch (`${curatedApi}/museums`, {
@@ -87,9 +83,9 @@ const domUpdateCollectionSelectOption = function(collection) {
 }
 
 // API CALL: Search & return array of artworks
-const searchArtworks = function(searchMuseum = '--All--') {
+const searchArtworkApi = function(museumSlug = 'all') {
     let searchQuery = ''
-    if (searchMuseum !== '--All--') {searchQuery = `?museum=${searchMuseum}`}
+    if (museumSlug !== 'all') {searchQuery = `?slug=${museumSlug}`}
     
     fetch (`${curatedApi}/artworks${searchQuery}`, {
         method: 'GET',
@@ -122,7 +118,7 @@ const populateHero = function(artworks, arrIndex = 0) {
     let heroTitle = `${newArtworks[arrIndex].title}, ${newArtworks[arrIndex].artist}`
     let heroImage = `${newArtworks[arrIndex].file.preferred.url}`
     let heroRating = newArtworks[arrIndex].rating || 0
-    
+
     document.getElementById('hero-title').innerText = heroTitle
     document.getElementById('hero-img').src = heroImage
     document.getElementById('rating-select').value = heroRating
@@ -153,11 +149,20 @@ const populateHeroInfo = function(artwork) {
 
 }
 
-// searchArtworks(artworkApi)
-// searchArtworks(artworkApi, 'Tate Britain')
+// searchArtworkApi(artworkApi)
+// searchArtworkApi(artworkApi, 'Tate Britain')
 
 
 // Initialze page
 populateMusuemSelect()
 populateCollectionSelect()
-searchArtworks()
+searchArtworkApi()
+
+// Add Event Handlers
+const handleClick = function(event) {
+    let museumSlug = document.getElementById('museum-select').value
+    searchArtworkApi(museumSlug)
+}
+
+// Add Event Listeners
+document.getElementById('search-artwork').addEventListener('click', handleClick)
