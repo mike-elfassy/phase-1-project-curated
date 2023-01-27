@@ -46,13 +46,13 @@ const populateMusuemSelect = function() {
     })
     .then (response => response.json())
     .then (museums => museums.forEach(museum => {
-        domCreateMuseumSelectOption(museum)
+        domUpdateMuseumSelectOption(museum)
     }))
     .catch (error => console.error(`${error.message}`))
 }
 
 // HELPER: Populate musuem picklist
-const domCreateMuseumSelectOption = function(museum) {
+const domUpdateMuseumSelectOption = function(museum) {
         // console.log(museum.id, museum.name, museum.slug)
         // console.log(document.querySelector('select#museum-select'))
 
@@ -72,12 +72,12 @@ const populateCollectionSelect = function() {
     })
     .then (response => response.json())
     .then (collections => collections.forEach(collection => {
-        domCreateCollectionSelectOption(collection)
+        domUpdateCollectionSelectOption(collection)
     }))
 }
 
 // HELPER: Populate collection picklist
-const domCreateCollectionSelectOption = function(collection) {
+const domUpdateCollectionSelectOption = function(collection) {
     let selectForm = document.querySelector('select#collection-select')
     let newOption = document.createElement('option')
     newOption.setAttribute('value',collection.id)
@@ -87,7 +87,7 @@ const domCreateCollectionSelectOption = function(collection) {
 }
 
 // API CALL: Search & return array of artworks
-const searchArtworks = function(curatedApi, searchMuseum = '--All--') {
+const searchArtworks = function(searchMuseum = '--All--') {
     let searchQuery = ''
     if (searchMuseum !== '--All--') {searchQuery = `?museum=${searchMuseum}`}
     
@@ -99,17 +99,19 @@ const searchArtworks = function(curatedApi, searchMuseum = '--All--') {
     .then (artworks => {
         artworkList = []
         populateArtworkList(artworks)
+        populateHero(artworkList[0])
+        populateHeroInfo(artworkList[0])
     })
     .catch (error => console.error(`${error.message}`))
 }
 
-// HELPER: Populate artwork hero
+// HELPER: Populate artwork list
 const populateArtworkList = function(artworks) {
     artworks.forEach(artwork => artworkList.push(artwork))
 }
 
 // HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
-const heroFocus = function(artworks, arrIndex = 0) {
+const populateHero = function(artworks, arrIndex = 0) {
     
     // Handle object vs array
     let newArtworks = []
@@ -120,8 +122,7 @@ const heroFocus = function(artworks, arrIndex = 0) {
     let heroTitle = `${newArtworks[arrIndex].title}, ${newArtworks[arrIndex].artist}`
     let heroImage = `${newArtworks[arrIndex].file.preferred.url}`
     let heroRating = newArtworks[arrIndex].rating || 0
-    console.log(newArtworks[arrIndex])
-    console.log(heroRating)
+    
     document.getElementById('hero-title').innerText = heroTitle
     document.getElementById('hero-img').src = heroImage
     document.getElementById('rating-select').value = heroRating
@@ -135,10 +136,10 @@ const populateHeroInfo = function(artwork) {
     const createListItem = function(keyText, valText) {
         let liElement = document.createElement('li')
         let strongElement = document.createElement('strong')
+        
         liElement.innerText = valText
         strongElement.innerText = keyText
         liElement.prepend(strongElement)
-        // console.log(liElement)
 
         document.getElementById('artwork-info-list').appendChild(liElement)
     }
@@ -155,6 +156,8 @@ const populateHeroInfo = function(artwork) {
 // searchArtworks(artworkApi)
 // searchArtworks(artworkApi, 'Tate Britain')
 
+
+// Initialze page
 populateMusuemSelect()
 populateCollectionSelect()
-searchArtworks(curatedApi)
+searchArtworks()
