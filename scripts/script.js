@@ -148,7 +148,17 @@ const populateHero = function(artworks, arrIndex = 0) {
     populateHeroInfo(newArtworks[arrIndex])
 }
 
+// HELPER: Update artwork array index for navigation
+const calculateNewArtworkListIndex = function(currentIndex, increment, artworkList) {
+    let newIndex = currentIndex + increment
+    
+    // console.log('New Index:', newIndex, ", Max:", artworkList.length)
 
+    if (newIndex >= artworkList.length) {console.log('greater'); newIndex = 0}
+    else if (newIndex < 0) {console.log('less than'); newIndex = artworkList.length - 1}
+
+    return newIndex
+}
 
 
 
@@ -171,20 +181,22 @@ const handleSearchClick = function(event) {
 }
 
 const handleNav = function(event) {
-    console.log(artworkListIndex)
+    let direction = 0
     if (event.type === 'keydown') {
-        if (event.code === 'ArrowLeft') {artworkListIndex--}
-        else if (event.code === 'ArrowRight') {artworkListIndex++}
+        if (event.code === 'ArrowLeft') {direction = -1}
+        else if (event.code === 'ArrowRight') {direction = 1}
         else {return}
     }
     else if (event.type === 'click') {
-        if (event.target.id === 'nav-left') {artworkListIndex--}
-        else if (event.target.id === 'nav-right') {artworkListIndex++}
+        if (event.target.id === 'nav-left') {direction = -1}
+        else if (event.target.id === 'nav-right') {direction = 1}
         else {return}
     }
     else {return}
 
-    console.log(artworkListIndex)
+    // Update Hero Image
+    artworkListIndex = calculateNewArtworkListIndex(artworkListIndex, direction, artworkList)
+    populateHero(artworkList[artworkListIndex])
 }
 
 // Add Event Listeners
