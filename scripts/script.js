@@ -128,15 +128,28 @@ const heroFocus = function(artworks, arrIndex = 0) {
 
 }
 
-// HELPER: Populate Hero Info (right pane)
-const populateHeroInfo = function() {
+// HELPER: Populate Hero Info (right pane) based on artwork
+const populateHeroInfo = function(artwork) {
+    
     // Iterate li elemnts
-    const createListItem(keyText, valText) {
+    const createListItem = function(keyText, valText) {
         let liElement = document.createElement('li')
         let strongElement = document.createElement('strong')
+        liElement.innerText = valText
         strongElement.innerText = keyText
-        liElement.appendChild(strongElement)
+        liElement.prepend(strongElement)
+        // console.log(liElement)
+
+        document.getElementById('artwork-info-list').appendChild(liElement)
     }
+
+    // Can enhance this to iterate over object
+    createListItem('Artist: ', `${artwork.artist} ${artwork.artist_lifespan}`)
+    createListItem('Artwork Date: ', artwork.date)
+    createListItem('Museum: ', artwork.museum)
+    createListItem('Genre: ', artwork.genre)
+    createListItem('Medium: ', artwork.medium)
+
 }
 
 // searchArtworks(artworkApi)
