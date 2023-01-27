@@ -1,7 +1,3 @@
-console.log('Hello World')
-
-// Hero
-
 // Hero-Museum Slector
 // fn1: (Nice to have) Populate museum selector based on available museums
 // fn2: form handler store local variable based on museum filter
@@ -28,6 +24,7 @@ console.log('Hello World')
 
 // Globals Variables
 let museumList = []
+let artworkList = []
 let collectionList = [1]
 
 // API Globals
@@ -36,6 +33,10 @@ const requestHeaders = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 }
+
+
+
+
 
 // API CALL: Query museums & populate Museum Picklist
 const populateMusuemSelect = function() {
@@ -89,16 +90,53 @@ const domCreateCollectionSelectOption = function(collection) {
 const searchArtworks = function(curatedApi, searchMuseum = '--All--') {
     let searchQuery = ''
     if (searchMuseum !== '--All--') {searchQuery = `?museum=${searchMuseum}`}
-
+    
     fetch (`${curatedApi}/artworks${searchQuery}`, {
         method: 'GET',
         headers: requestHeaders
     })
     .then (response => response.json())
-    .then (artworks => artworks.forEach(artwork => {
-        console.log(artwork)
-    }))
+    .then (artworks => {
+        artworkList = []
+        populateArtworkList(artworks)
+    })
     .catch (error => console.error(`${error.message}`))
+}
+
+// HELPER: Populate artwork hero
+const populateArtworkList = function(artworks) {
+    artworks.forEach(artwork => artworkList.push(artwork))
+}
+
+// HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
+const heroFocus = function(artworks, arrIndex = 0) {
+    
+    // Handle object vs array
+    let newArtworks = []
+    if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
+    else newArtworks = [...artworks]
+
+    // Select DOM elements
+    let heroTitle = `${newArtworks[arrIndex].title}, ${newArtworks[arrIndex].artist}`
+    let heroImage = `${newArtworks[arrIndex].file.preferred.url}`
+    let heroRating = newArtworks[arrIndex].rating || 0
+    console.log(newArtworks[arrIndex])
+    console.log(heroRating)
+    document.getElementById('hero-title').innerText = heroTitle
+    document.getElementById('hero-img').src = heroImage
+    document.getElementById('rating-select').value = heroRating
+
+}
+
+// HELPER: Populate Hero Info (right pane)
+const populateHeroInfo = function() {
+    // Iterate li elemnts
+    const createListItem(keyText, valText) {
+        let liElement = document.createElement('li')
+        let strongElement = document.createElement('strong')
+        strongElement.innerText = keyText
+        liElement.appendChild(strongElement)
+    }
 }
 
 // searchArtworks(artworkApi)
@@ -106,3 +144,4 @@ const searchArtworks = function(curatedApi, searchMuseum = '--All--') {
 
 populateMusuemSelect()
 populateCollectionSelect()
+searchArtworks(curatedApi)
