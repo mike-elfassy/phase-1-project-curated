@@ -49,12 +49,10 @@ const populateMusuemSelect = function() {
 
 // HELPER: Populate musuem picklist
 const domUpdateMuseumSelectOption = function(museum) {
-        // console.log(museum.id, museum.name, museum.slug)
-        // console.log(document.querySelector('select#museum-select'))
 
         let selectForm = document.querySelector('select#museum-select')
         let newOption = document.createElement('option')
-        newOption.setAttribute('value',museum.slug)
+        newOption.setAttribute('value',museum.id)
         newOption.innerText = museum.name
         
         selectForm.appendChild(newOption)
@@ -83,9 +81,9 @@ const domUpdateCollectionSelectOption = function(collection) {
 }
 
 // API CALL: Search & return array of artworks
-const searchArtworkApi = function(museumSlug = 'all') {
+const searchArtworkApi = function(museum = 'all') {
     let searchQuery = ''
-    if (museumSlug !== 'all') {searchQuery = `?slug=${museumSlug}`}
+    if (museum !== 'all') {searchQuery = `?museum=${museum}`}
     
     fetch (`${curatedApi}/artworks${searchQuery}`, {
         method: 'GET',
@@ -109,10 +107,9 @@ const populateArtworkList = function(artworks) {
     artworks.forEach(artwork => artworkList.push(artwork))
 }
 
-// HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
+// HELPER: Populate Hero Image, Title, and Rating (right pane) based on artwork
 const populateHeroImage = function(artwork) {
 
-    // Select DOM elements
     let heroTitle = `${artwork.title}, ${artwork.artist}`
     let heroImage = `${artwork.file.preferred.url}`
     let heroRating = artwork.rating || 0
@@ -160,7 +157,6 @@ const populateHero = function(artworks, arrIndex = 0) {
 
     populateHeroImage(newArtworks[arrIndex])
     populateHeroInfo(newArtworks[arrIndex])
-
 }
 
 // searchArtworkApi(artworkApi)
@@ -174,8 +170,9 @@ searchArtworkApi()
 
 // Add Event Handlers
 const handleClick = function(event) {
-    let museumSlug = document.getElementById('museum-select').value
-    searchArtworkApi(museumSlug)
+    let museumId = document.getElementById('museum-select').value
+    console.log(museumId)
+    searchArtworkApi(museumId)
 }
 
 // Add Event Listeners

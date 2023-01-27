@@ -695,18 +695,15 @@
   [
       {
           "id": 1,
-          "name": "Tate Britain",
-          "slug": "tate"
+          "name": "Tate Britain"
       },
       {
           "id": 2,
-          "name": "Musée des Beaux-Arts de Strasbourg",
-          "slug": "strasbourg"
+          "name": "Musée des Beaux-Arts de Strasbourg"
       },
       {
           "id": 3,
-          "name": "Musée d'Orsay",
-          "slug": "dorsay"
+          "name": "Musée d'Orsay"
       }
   ],
   "collections":
