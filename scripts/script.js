@@ -94,9 +94,12 @@ const searchArtworkApi = function(museumSlug = 'all') {
     .then (response => response.json())
     .then (artworks => {
         artworkList = []
+        
         populateArtworkList(artworks)
-        populateHero(artworkList[0])
+        populateHeroImage(artworkList[0])
         populateHeroInfo(artworkList[0])
+
+        console.log(artworkList)
     })
     .catch (error => console.error(`${error.message}`))
 }
@@ -107,17 +110,12 @@ const populateArtworkList = function(artworks) {
 }
 
 // HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
-const populateHero = function(artworks, arrIndex = 0) {
-    
-    // Handle object vs array
-    let newArtworks = []
-    if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
-    else newArtworks = [...artworks]
+const populateHeroImage = function(artwork) {
 
     // Select DOM elements
-    let heroTitle = `${newArtworks[arrIndex].title}, ${newArtworks[arrIndex].artist}`
-    let heroImage = `${newArtworks[arrIndex].file.preferred.url}`
-    let heroRating = newArtworks[arrIndex].rating || 0
+    let heroTitle = `${artwork.title}, ${artwork.artist}`
+    let heroImage = `${artwork.file.preferred.url}`
+    let heroRating = artwork.rating || 0
 
     document.getElementById('hero-title').innerText = heroTitle
     document.getElementById('hero-img').src = heroImage
@@ -149,6 +147,19 @@ const populateHeroInfo = function(artwork) {
     createListItem('Museum: ', artwork.museum)
     createListItem('Genre: ', artwork.genre)
     createListItem('Medium: ', artwork.medium)
+
+}
+
+// HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
+const populateHero = function(artworks, arrIndex = 0) {
+    
+    // Handle object vs array
+    let newArtworks = []
+    if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
+    else newArtworks = [...artworks]
+
+    populateHeroImage(newArtworks[arrIndex])
+    populateHeroInfo(newArtworks[arrIndex])
 
 }
 
