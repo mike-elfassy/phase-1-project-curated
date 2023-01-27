@@ -34,16 +34,17 @@ const requestHeaders = {
     'Accept': 'application/json'
 }
 
-// API CALL: Query museums & populate Museum Picklist
+// API CALL: Query museums & populate Museum Picklist + stores museums locally
 const populateMusuemSelect = function() {
     fetch (`${curatedApi}/museums`, {
         method: 'GET',
         headers: requestHeaders
     })
     .then (response => response.json())
-    .then (museums => museums.forEach(museum => {
-        domUpdateMuseumSelectOption(museum)
-    }))
+    .then (museums => {
+        museumList = [...museums]
+        museums.forEach(museum => {domUpdateMuseumSelectOption(museum)})
+    })
     .catch (error => console.error(`${error.message}`))
 }
 
@@ -81,9 +82,9 @@ const domUpdateCollectionSelectOption = function(collection) {
 }
 
 // API CALL: Search & return array of artworks
-const searchArtworkApi = function(museum = 'all') {
+const searchArtworkApi = function(museumName = 'all') {
     let searchQuery = ''
-    if (museum !== 'all') {searchQuery = `?museum=${museum}`}
+    if (museumName !== 'all') {searchQuery = `?museum=${museumName}`}
     
     fetch (`${curatedApi}/artworks${searchQuery}`, {
         method: 'GET',
@@ -171,8 +172,11 @@ searchArtworkApi()
 // Add Event Handlers
 const handleClick = function(event) {
     let museumId = document.getElementById('museum-select').value
-    console.log(museumId)
-    searchArtworkApi(museumId)
+    let museum = museumList.find(museum => museum.id == museumId)
+    let museumName = 'all'
+    if (museum) {museumName = museum.name}
+    console.log(museumName)
+    searchArtworkApi(museumName)
 }
 
 // Add Event Listeners
