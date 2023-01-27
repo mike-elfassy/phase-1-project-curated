@@ -1,15 +1,5 @@
-// Hero-Museum Slector
-// fn1: (Nice to have) Populate museum selector based on available museums
-// fn2: form handler store local variable based on museum filter
-
-// Hero-collection Slector
-// fn1: Populate collection selctor based on available collections
-// fn2: form handler store local variable based on colection selection
-
 // Hero-Image-Card
-// fn1: Function that fetches artwork array for hero (may be filtered)
-// fn2: manipulate DOM to display artwork & info
-// fn3: event listerer & functions to rate/save artowork
+// fn3: event listerer & functions to rate/save artwork
 // fn3: event listener & function to move artwork side to side
 
 // Collections
@@ -25,6 +15,7 @@
 // Globals Variables
 let museumList = []
 let artworkList = []
+let artworkListIndex = 0
 let collectionList = [1]
 
 // API Globals
@@ -92,19 +83,16 @@ const searchArtworkApi = function(museumName = 'all') {
     })
     .then (response => response.json())
     .then (artworks => {
-        artworkList = []
-        
         populateArtworkList(artworks)
-        populateHeroImage(artworkList[0])
-        populateHeroInfo(artworkList[0])
-
-        console.log(artworkList)
+        artworkListIndex = 0
+        populateHero(artworkList[artworkListIndex])
     })
     .catch (error => console.error(`${error.message}`))
 }
 
 // HELPER: Populate artwork list
 const populateArtworkList = function(artworks) {
+    artworkList = []
     artworks.forEach(artwork => artworkList.push(artwork))
 }
 
@@ -160,8 +148,8 @@ const populateHero = function(artworks, arrIndex = 0) {
     populateHeroInfo(newArtworks[arrIndex])
 }
 
-// searchArtworkApi(artworkApi)
-// searchArtworkApi(artworkApi, 'Tate Britain')
+
+
 
 
 // Initialze page
@@ -169,15 +157,37 @@ populateMusuemSelect()
 populateCollectionSelect()
 searchArtworkApi()
 
+
+
+
+
 // Add Event Handlers
-const handleClick = function(event) {
+const handleSearchClick = function(event) {
     let museumId = document.getElementById('museum-select').value
     let museum = museumList.find(museum => museum.id == museumId)
     let museumName = 'all'
     if (museum) {museumName = museum.name}
-    console.log(museumName)
     searchArtworkApi(museumName)
 }
 
+const handleNav = function(event) {
+    console.log(artworkListIndex)
+    if (event.type === 'keydown') {
+        if (event.code === 'ArrowLeft') {artworkListIndex--}
+        else if (event.code === 'ArrowRight') {artworkListIndex++}
+        else {return}
+    }
+    else if (event.type === 'click') {
+        if (event.target.id === 'nav-left') {artworkListIndex--}
+        else if (event.target.id === 'nav-right') {artworkListIndex++}
+        else {return}
+    }
+    else {return}
+
+    console.log(artworkListIndex)
+}
+
 // Add Event Listeners
-document.getElementById('search-artwork').addEventListener('click', handleClick)
+document.getElementById('search-artwork').addEventListener('click', handleSearchClick)
+document.querySelectorAll('button.left-right-button').forEach(node => node.addEventListener('click', handleNav))
+addEventListener('keydown', handleNav)
