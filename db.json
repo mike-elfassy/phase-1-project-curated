@@ -711,12 +711,12 @@
       {
         "id": 1,
         "name": "Default",
-        "artworks":[]
+        "artworkIds":[]
       },
       {
         "id": 2,
         "name": "My Personal Favs",
-        "artworks":
+        "artworkIds":
         [
             13,
             2,

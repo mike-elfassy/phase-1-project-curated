@@ -108,7 +108,7 @@ button {
     max-height:100%;
 }
 
-.collection-grid {
+.collection-flex-grid {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -136,4 +136,8 @@ button {
 
 .collection-item-detail-delete {
     flex: none;
+}
+
+img.collection-artwork-image {
+    max-width: 50px;
 }

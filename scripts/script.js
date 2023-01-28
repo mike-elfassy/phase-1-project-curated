@@ -95,18 +95,20 @@ const apiGetCollections = function() {
         // Save a local copy of collection array
         localCollectionList = [...collections]
         
-        // populate collection selctOptions
+        // Populate collection selctOptions & collection container
         let collectionsSelectNode = document.querySelector('select#collection-select')
+        let collectionContainerNode = document.querySelector('div#collections-container')
         collections.forEach(collection => {
             collectionsSelectNode.appendChild(createNodeSelectOption(collection))
+            collectionContainerNode.appendChild(createNodeCollectionCard(collection))
         })
     })
 }
 
-// HELPER: add single artwork to collection grid
+// HELPER: Add single artwork to collection grid
 const createNodeCollectionArtwork = function(artworkId) {
     // Get artwork object
-    let newArtwork = localArtworkList.find(artwork => artwork.id = artworkId)
+    let newArtwork = localArtworkList.find(artwork => artwork.id === artworkId)
     newArtwork.rating = ratingToStars(newArtwork.rating || 0)
     
     // Create Node Object
@@ -148,7 +150,7 @@ const createNodeCollectionCard = function(collection) {
 
     // Iterate over collections artworks and append art to grid
     let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
-    collection.artworks.forEach(artworkId => {
+    collection.artworkIds.forEach(artworkId => {
         collectionGrid.appendChild(createNodeCollectionArtwork(artworkId))
     })
     
@@ -244,15 +246,11 @@ const calculateNewArtworkListIndex = function(currentIndex, increment) {
 
 
 // Initialze page
+searchArtworkApi()
 apiGetMuseums()
 apiGetCollections()
-searchArtworkApi()
 
-
-
-
-
-// Add Event Handlers
+// Event Handler Definitions
 const handleSearchClick = function(event) {
     let museumId = document.getElementById('museum-select').value
     let museum = localMuseumArray.find(museum => museum.id == museumId)
