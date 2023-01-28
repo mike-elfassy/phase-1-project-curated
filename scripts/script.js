@@ -141,12 +141,15 @@ const createNodeCollectionCard = function(collection) {
     newCollectionCardNode.innerHTML = (`
             <div class="header collection-header">
                 <h2 class="collection-name"></h2>
+                <input class="collection-name-input"></input>
                 <button class="edit-collection">Edit</button>
+                <button class="rename-collection">Rename</button>
                 <button class="delete-collection">X</button>
             </div>
             <div class="collection-flex-grid"></div>
     `)
     newCollectionCardNode.querySelector('h2').innerText = collection.name
+    newCollectionCardNode.querySelector('input').value = collection.name
 
     // Iterate over collections artworks and append art to grid
     let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
@@ -158,10 +161,11 @@ const createNodeCollectionCard = function(collection) {
     newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
     newCollectionCardNode.querySelector('button.edit-collection').addEventListener('click', handleEditCollection)
 
-    // Remove edit and delete buttons from default collection
+    // Remove input, edit, rename, and delete nodes from default collection
     if (collection.id === 1) {
         newCollectionCardNode.querySelector('div').childNodes.forEach(node => {
-            if (node.tagName === 'BUTTON') {node.remove()}
+              if (node.tagName === 'BUTTON') {node.remove()}
+              if (node.tagName === 'INPUT') {node.remove()}
         })
     }
     
