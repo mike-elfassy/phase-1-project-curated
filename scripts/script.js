@@ -13,7 +13,7 @@
 
 // Globals Variables
 let localArtworkList = []
-let localArtworkListIndex = 0 
+let localArtworkCurrentIndex = 0 
 let localMuseumArray = []
 let localCollectionList = []
 
@@ -157,8 +157,8 @@ const createNodeCollectionCard = function(collection) {
     return newCollectionCardNode
 }
 
-// API CALL: Search & return array of artworks
-const searchArtworkApi = function(museumName = 'all') {
+// API CALL: Query artworks (optional musem filter), save a local copy of array, and populate gallery hero
+const apiGetArtworks = function(museumName = 'all') {
     let searchQuery = ''
     if (museumName !== 'all') {searchQuery = `?museum=${museumName}`}
     
@@ -168,17 +168,14 @@ const searchArtworkApi = function(museumName = 'all') {
     })
     .then (response => response.json())
     .then (artworks => {
-        populateArtworkList(artworks)
-        localArtworkListIndex = 0
-        populateHero(localArtworkList[localArtworkListIndex])
+        // Save a local copy of artwork array
+        localArtworkList = [...artworks]
+        localArtworkCurrentIndex = 0
+
+        // Populate Gallery Hero
+        populateHero(localArtworkList[localArtworkCurrentIndex])
     })
     .catch (error => console.error(`${error.message}`))
-}
-
-// HELPER: Populate artwork list
-const populateArtworkList = function(artworks) {
-    localArtworkList = []
-    artworks.forEach(artwork => localArtworkList.push(artwork))
 }
 
 // HELPER: Populate Hero Image, Title, and Rating (right pane) based on artwork
@@ -246,7 +243,7 @@ const calculateNewArtworkListIndex = function(currentIndex, increment) {
 
 
 // Initialze page
-searchArtworkApi()
+apiGetArtworks()
 apiGetMuseums()
 apiGetCollections()
 
@@ -256,7 +253,7 @@ const handleSearchClick = function(event) {
     let museum = localMuseumArray.find(museum => museum.id == museumId)
     let museumName = 'all'
     if (museum) {museumName = museum.name}
-    searchArtworkApi(museumName)
+    apiGetArtworks(museumName)
 }
 
 const handleNav = function(event) {
@@ -274,8 +271,8 @@ const handleNav = function(event) {
     else {return}
 
     // Update Hero Image
-    localArtworkListIndex = calculateNewArtworkListIndex(localArtworkListIndex, direction)
-    populateHero(localArtworkList[localArtworkListIndex])
+    localArtworkCurrentIndex = calculateNewArtworkListIndex(localArtworkCurrentIndex, direction)
+    populateHero(localArtworkList[localArtworkCurrentIndex])
 }
 
 // Add Event Listeners
