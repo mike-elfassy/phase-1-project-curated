@@ -24,8 +24,13 @@ const requestHeaders = {
     'Accept': 'application/json'
 }
 
+
+
+
+
+
 // HELPER: Translate 0-5 rating to stars
-const ratingToStars(rating) {
+const ratingToStars = function(rating) {
     // ★☆
     let stars = '☆☆☆☆☆'
     switch(rating) {
@@ -50,6 +55,7 @@ const ratingToStars(rating) {
         default:
             stars = '☆☆☆☆☆'
     }
+    return stars
 }
 
 // API CALL: Query museums & populate Museum Picklist + stores museums locally
@@ -104,7 +110,8 @@ const domUpdateCollectionSelectOption = function(collection) {
 const createNodeCollectionArtwork = function(artworkId) {
     // Get artwork object
     let newArtwork = artworkList.find(artwork => artwork.id = artworkId)
-
+    newArtwork.rating = ratingToStars(newArtwork.rating || 0)
+    
     // Create Node Object
     let newArtworkNode = document.createElement('div')
     newArtworkNode.id = `collection-artwork-${newArtwork.id}`
@@ -118,7 +125,13 @@ const createNodeCollectionArtwork = function(artworkId) {
             <button class="delete-button">X</button>
         </div>
     `)
+    newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
+    newArtworkNode.querySelector('div.collection-artwork-rating').innerText = newArtwork.rating
+    
+
     console.log(newArtworkNode)
+    
+    // console.log(newArtworkNode)
 }
 
 // HELPER: Populate Collection Container with new collection cards
@@ -138,10 +151,10 @@ const createNodeCollectionCard = function(collection) {
             <div class="collection-flex-grid"></div>
     `)
 
-    createCollectionArtworkNode(12)
+    createNodeCollectionArtwork(12)
     // Iterate over collections artworks
     // collection.artworks.forEach(artwork => cb)
-    console.log(newCollectionCard)
+    // console.log(newCollectionCard)
 }
 
 // API CALL: Search & return array of artworks
