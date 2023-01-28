@@ -645,21 +645,21 @@
       "artworkIds": []
     },
     {
-      "id": 2,
-      "name": "First Favorites",
-      "artworkIds": [
-        13,
-        2,
-        5
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Second Favorites",
-      "artworkIds": [
-        10,
-        13
-      ]
-    }
+        "id": 2,
+        "name": "First Favorites",
+        "artworkIds": [
+          13,
+          2,
+          5
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Second Favorites",
+        "artworkIds": [
+          10,
+          13
+        ]
+      }
   ]
 }

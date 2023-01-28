@@ -141,9 +141,10 @@ const createNodeCollectionCard = function(collection) {
     newCollectionCardNode.innerHTML = (`
             <div class="header collection-header">
                 <h2 class="collection-name"></h2>
-                <input class="collection-name-input"></input>
+                <input class="collection-name-input" style="display:none"></input>
                 <button class="edit-collection">Edit</button>
-                <button class="rename-collection">Rename</button>
+                <button class="cancel-collection" style="display:none">Cancel</button>
+                <button class="rename-collection" style="display:none">Rename</button>
                 <button class="delete-collection">X</button>
             </div>
             <div class="collection-flex-grid"></div>
@@ -342,6 +343,33 @@ const handleDeleteCollection = function(event) {
 
 const handleEditCollection = function(event) {
     console.log('Edit')
+    let collectionCardNode = event.target.parentNode.parentNode
+    toggleCollectionCardNode(collectionCardNode, true)
+}
+
+// HELPER: Toggle visibility on collection card header
+const toggleCollectionCardNode = function(collectionCardNode, showInput = false) {
+    let collectionNameNode = collectionCardNode.querySelector('h2.collection-name')
+    let collectionNameInputNode = collectionCardNode.querySelector('input.collection-name-input')
+    let editCollectionNode = collectionCardNode.querySelector('button.edit-collection')
+    let renameCollectionNode = collectionCardNode.querySelector('button.rename-collection')
+    let cancelCollectionNode = collectionCardNode.querySelector('button.cancel-collection')
+
+    if (showInput) {
+        collectionNameNode.style.display = 'none'
+        collectionNameInputNode.style.display = 'block'
+        editCollectionNode.style.display = 'none'
+        cancelCollectionNode.style.display = 'block'
+        renameCollectionNode.style.display = 'block'
+    }
+    else {
+        collectionNameNode.style.display = 'block'
+        collectionNameInputNode.style.display = 'none'
+        editCollectionNode.style.display = 'block'
+        cancelCollectionNode.style.display = 'none'
+        renameCollectionNode.style.display = 'none'
+    }
+
 }
 
 // Add Event Listeners
