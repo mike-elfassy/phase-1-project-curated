@@ -158,9 +158,11 @@ const createNodeCollectionCard = function(collection) {
         collectionGrid.appendChild(createNodeCollectionArtwork(artworkId))
     })
 
-    // Add event listeners for Delete & Edit buttons
-    newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
+    // Add event listeners for Cancel, Rename, Edit, and Delete buttons
+    newCollectionCardNode.querySelector('button.cancel-collection').addEventListener('click', handleCancelCollection)
+    newCollectionCardNode.querySelector('button.rename-collection').addEventListener('click', handleRenameCollection)
     newCollectionCardNode.querySelector('button.edit-collection').addEventListener('click', handleEditCollection)
+    newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
 
     // Remove input, edit, rename, and delete nodes from default collection
     if (collection.id === 1) {
@@ -294,6 +296,30 @@ const apiDeleteCollection = function(collectionId = null) {
     .catch (error => console.error(`${error.message}`))
 }
 
+// HELPER: Toggle visibility on collection card header
+const toggleCollectionCardNode = function(collectionCardNode, showInput = false) {
+    let collectionNameNode = collectionCardNode.querySelector('h2.collection-name')
+    let collectionNameInputNode = collectionCardNode.querySelector('input.collection-name-input')
+    let editCollectionNode = collectionCardNode.querySelector('button.edit-collection')
+    let renameCollectionNode = collectionCardNode.querySelector('button.rename-collection')
+    let cancelCollectionNode = collectionCardNode.querySelector('button.cancel-collection')
+
+    if (showInput) {
+        collectionNameNode.style.display = 'none'
+        collectionNameInputNode.style.display = 'block'
+        editCollectionNode.style.display = 'none'
+        cancelCollectionNode.style.display = 'block'
+        renameCollectionNode.style.display = 'block'
+    }
+    else {
+        collectionNameNode.style.display = 'block'
+        collectionNameInputNode.style.display = 'none'
+        editCollectionNode.style.display = 'block'
+        cancelCollectionNode.style.display = 'none'
+        renameCollectionNode.style.display = 'none'
+    }
+
+}
 
 
 // Initialze page
@@ -335,42 +361,29 @@ const handleCreateCollection = function(event) {
     apiPostCollection()
 }
 
+const handleCancelCollection = function(event) {
+    let collectionCardNode = event.target.parentNode.parentNode
+    toggleCollectionCardNode(collectionCardNode, false)
+}
+
+const handleRenameCollection = function(event) {
+    console.log('Rename')
+    let collectionCardNode = event.target.parentNode.parentNode
+    
+}
+
+const handleEditCollection = function(event) {
+    let collectionCardNode = event.target.parentNode.parentNode
+    toggleCollectionCardNode(collectionCardNode, true)
+}
+
 const handleDeleteCollection = function(event) {
     let collectionCardNode = event.target.parentNode.parentNode
     let collectionId = collectionCardNode.id.substring(16)
     apiDeleteCollection(collectionId)
 }
 
-const handleEditCollection = function(event) {
-    console.log('Edit')
-    let collectionCardNode = event.target.parentNode.parentNode
-    toggleCollectionCardNode(collectionCardNode, true)
-}
 
-// HELPER: Toggle visibility on collection card header
-const toggleCollectionCardNode = function(collectionCardNode, showInput = false) {
-    let collectionNameNode = collectionCardNode.querySelector('h2.collection-name')
-    let collectionNameInputNode = collectionCardNode.querySelector('input.collection-name-input')
-    let editCollectionNode = collectionCardNode.querySelector('button.edit-collection')
-    let renameCollectionNode = collectionCardNode.querySelector('button.rename-collection')
-    let cancelCollectionNode = collectionCardNode.querySelector('button.cancel-collection')
-
-    if (showInput) {
-        collectionNameNode.style.display = 'none'
-        collectionNameInputNode.style.display = 'block'
-        editCollectionNode.style.display = 'none'
-        cancelCollectionNode.style.display = 'block'
-        renameCollectionNode.style.display = 'block'
-    }
-    else {
-        collectionNameNode.style.display = 'block'
-        collectionNameInputNode.style.display = 'none'
-        editCollectionNode.style.display = 'block'
-        cancelCollectionNode.style.display = 'none'
-        renameCollectionNode.style.display = 'none'
-    }
-
-}
 
 // Add Event Listeners
 
