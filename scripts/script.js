@@ -297,15 +297,12 @@ const apiDeleteCollection = function(collectionId = null) {
 }
 
 // API PATCH: Delete collection object, update collections selectOptions, and remove it from the DOM
-const apiPatchRenameCollection = function(collectionId = null, collectionName = null) { 
-    if (collectionId === null || collectionName === null) {return}
-    console.log('before patch')
+const apiPatchCollection = function(collectionId = null, collectionPatchObj = null) { 
+    if (collectionId === null || collectionPatchObj === null) {return}
     fetch (`${curatedApi}/collections/${collectionId}`, {
         method: 'PATCH',
         headers: requestHeaders,
-        body: JSON.stringify({
-            name: collectionName
-        })
+        body: JSON.stringify(collectionPatchObj)
     })
     .then (response => response.json())
     .then (collection => {
@@ -392,7 +389,9 @@ const handleRenameCollection = function(event) {
     let collectionCardNode = event.target.parentNode.parentNode
     let collectionId = collectionCardNode.id.substring(16)
     let collectionNameInput = collectionCardNode.querySelector('.collection-name-input').value
-    apiPatchRenameCollection(collectionId, collectionNameInput)
+    let collectionPatchObj = {name: collectionNameInput}
+
+    apiPatchCollection(collectionId, collectionPatchObj)
 }
 
 const handleEditCollection = function(event) {
