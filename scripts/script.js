@@ -277,18 +277,15 @@ const apiDeleteCollection = function(collectionId = null) {
         method: 'DELETE',
         headers: requestHeaders
     })
-    .then (
-        console.log('hi')
-        // // Remove collecion from selectOptions
-        // let collectionsSelectOptionNode = document.querySelector('select#collection-select option[value="1"]')
+    .then (() => {
+        // Remove collecion from selectOptions
+        let collectionsSelectOptionNode = document.querySelector(`select#collection-select option[value='${collectionId}']`)
+        collectionsSelectOptionNode.remove()
 
-        // // Remove collection card from the DOM
-        // let collectionContainerNode = document.querySelector('div#collections-container')
-        // collections.forEach(collection => {
-        //     collectionsSelectNode.appendChild(createNodeSelectOption(collection))
-        //     collectionContainerNode.appendChild(createNodeCollectionCard(collection))
-        // })
-    )
+        // Remove collection card from the DOM
+        let collectionCardNode = document.getElementById(`collection-card-${collectionId}`)
+        collectionCardNode.remove()
+    })
     .catch (error => console.error(`${error.message}`))
 }
 
@@ -334,7 +331,9 @@ const handleCreateCollection = function(event) {
 }
 
 const handleDeleteCollection = function(event) {
-    console.log('Delete')
+    let collectionCardNode = event.target.parentNode.parentNode
+    let collectionId = collectionCardNode.id.substring(16)
+    apiDeleteCollection(collectionId)
 }
 
 const handleEditCollection = function(event) {
