@@ -141,18 +141,12 @@ const createNodeCollectionCard = function(collection) {
     newCollectionCardNode.innerHTML = (`
             <div class="header collection-header">
                 <h2 class="collection-name"></h2>
-                <button class="rename-collection">Edit</button>
+                <button class="edit-collection">Edit</button>
                 <button class="delete-collection">X</button>
             </div>
             <div class="collection-flex-grid"></div>
     `)
     newCollectionCardNode.querySelector('h2').innerText = collection.name
-    // Remove edit and delete buttons from default collection
-    if (collection.id === 1) {
-        newCollectionCardNode.querySelector('div').childNodes.forEach(node => {
-            if (node.tagName === 'BUTTON') {node.remove()}
-        })
-    }
 
     // Iterate over collections artworks and append art to grid
     let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
@@ -160,10 +154,16 @@ const createNodeCollectionCard = function(collection) {
         collectionGrid.appendChild(createNodeCollectionArtwork(artworkId))
     })
 
-    // Add event listener: Delete
-    // newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
+    // Add event listeners for Delete & Edit buttons
+    newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
+    newCollectionCardNode.querySelector('button.edit-collection').addEventListener('click', handleEditCollection)
 
-    // Add event listener: Edit
+    // Remove edit and delete buttons from default collection
+    if (collection.id === 1) {
+        newCollectionCardNode.querySelector('div').childNodes.forEach(node => {
+            if (node.tagName === 'BUTTON') {node.remove()}
+        })
+    }
     
     return newCollectionCardNode
 }
@@ -270,12 +270,36 @@ const apiPostCollection = function(collectionName = 'New Collection') {
     .catch (error => console.error(`${error.message}`))
 }
 
+// API DELETE: Delete collection object, update collections selectOptions, and remove it from the DOM
+const apiDeleteCollection = function(collectionId = null) { 
+    if (collectionId === null) {return}
+    fetch (`${curatedApi}/collections/${collectionId}`, {
+        method: 'DELETE',
+        headers: requestHeaders
+    })
+    .then (
+        console.log('hi')
+        // // Remove collecion from selectOptions
+        // let collectionsSelectOptionNode = document.querySelector('select#collection-select option[value="1"]')
+
+        // // Remove collection card from the DOM
+        // let collectionContainerNode = document.querySelector('div#collections-container')
+        // collections.forEach(collection => {
+        //     collectionsSelectNode.appendChild(createNodeSelectOption(collection))
+        //     collectionContainerNode.appendChild(createNodeCollectionCard(collection))
+        // })
+    )
+    .catch (error => console.error(`${error.message}`))
+}
+
 
 
 // Initialze page
 apiGetArtworks()
 apiGetMuseums()
 apiGetCollections()
+
+
 
 // Event Handler Definitions
 const handleSearchClick = function(event) {
@@ -311,6 +335,10 @@ const handleCreateCollection = function(event) {
 
 const handleDeleteCollection = function(event) {
     console.log('Delete')
+}
+
+const handleEditCollection = function(event) {
+    console.log('Edit')
 }
 
 // Add Event Listeners
