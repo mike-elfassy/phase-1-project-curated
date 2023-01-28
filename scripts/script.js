@@ -266,6 +266,7 @@ const apiPostCollection = function(collectionName = 'New Collection') {
 }
 
 
+
 // Initialze page
 apiGetArtworks()
 apiGetMuseums()
@@ -299,7 +300,22 @@ const handleNav = function(event) {
     populateHero(localArtworkList[localArtworkCurrentIndex])
 }
 
+const handleCreateCollection = function(event) {
+    apiPostCollection()
+}
+
+const handleDeleteCollection = function(event) {
+    console.log('Delete')
+}
+
 // Add Event Listeners
+
+// Search Musuems
 document.getElementById('search-artwork').addEventListener('click', handleSearchClick)
+// Left/Right navigation on artwork
 document.querySelectorAll('button.left-right-button').forEach(node => node.addEventListener('click', handleNav))
 addEventListener('keydown', handleNav)
+// Create Collection
+document.querySelector('button.add-collection').addEventListener('click', handleCreateCollection)
+// Delete Collection
+document.querySelectorAll('button.delete-collection').forEach(node => node.addEventListener('click', handleDeleteCollection))

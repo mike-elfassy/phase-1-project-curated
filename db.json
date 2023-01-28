@@ -646,7 +646,7 @@
     },
     {
       "id": 2,
-      "name": "My Personal Favs",
+      "name": "First Favorites",
       "artworkIds": [
         13,
         2,
@@ -654,14 +654,12 @@
       ]
     },
     {
-      "name": "New Collection",
-      "artworkIds": [],
-      "id": 3
-    },
-    {
-      "name": "hello",
-      "artworkIds": [],
-      "id": 4
+      "id": 3,
+      "name": "Second Favorites",
+      "artworkIds": [
+        10,
+        13
+      ]
     }
   ]
 }
