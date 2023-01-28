@@ -296,6 +296,28 @@ const apiDeleteCollection = function(collectionId = null) {
     .catch (error => console.error(`${error.message}`))
 }
 
+// API PATCH: Delete collection object, update collections selectOptions, and remove it from the DOM
+const apiPatchRenameCollection = function(collectionId = null, collectionName = null) { 
+    if (collectionId === null || collectionName === null) {return}
+    console.log('before patch')
+    fetch (`${curatedApi}/collections/${collectionId}`, {
+        method: 'PATCH',
+        headers: requestHeaders,
+        body: JSON.stringify({
+            name: collectionName
+        })
+    })
+    .then (response => response.json())
+    .then (collection => {
+        // Rename collection card on the DOM
+        let collectionCardNode = document.getElementById(`collection-card-${collectionId}`)
+        collectionCardNode.querySelector('.collection-name').innerText = collection.name
+        // Toggle edit visibility
+        toggleCollectionCardNode(collectionCardNode, false)
+    })
+    .catch (error => console.error(`${error.message}`))
+}
+
 // HELPER: Toggle visibility on collection card header
 const toggleCollectionCardNode = function(collectionCardNode, showInput = false) {
     let collectionNameNode = collectionCardNode.querySelector('h2.collection-name')
@@ -367,9 +389,10 @@ const handleCancelCollection = function(event) {
 }
 
 const handleRenameCollection = function(event) {
-    console.log('Rename')
     let collectionCardNode = event.target.parentNode.parentNode
-    
+    let collectionId = collectionCardNode.id.substring(16)
+    let collectionNameInput = collectionCardNode.querySelector('.collection-name-input').value
+    apiPatchRenameCollection(collectionId, collectionNameInput)
 }
 
 const handleEditCollection = function(event) {
