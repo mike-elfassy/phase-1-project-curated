@@ -159,6 +159,11 @@ const createNodeCollectionCard = function(collection) {
     collection.artworkIds.forEach(artworkId => {
         collectionGrid.appendChild(createNodeCollectionArtwork(artworkId))
     })
+
+    // Add event listener: Delete
+    // newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
+
+    // Add event listener: Edit
     
     return newCollectionCardNode
 }
@@ -317,5 +322,3 @@ document.querySelectorAll('button.left-right-button').forEach(node => node.addEv
 addEventListener('keydown', handleNav)
 // Create Collection
 document.querySelector('button.add-collection').addEventListener('click', handleCreateCollection)
-// Delete Collection
-document.querySelectorAll('button.delete-collection').forEach(node => node.addEventListener('click', handleDeleteCollection))
