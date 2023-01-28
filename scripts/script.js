@@ -24,6 +24,34 @@ const requestHeaders = {
     'Accept': 'application/json'
 }
 
+// HELPER: Translate 0-5 rating to stars
+const ratingToStars(rating) {
+    // ★☆
+    let stars = '☆☆☆☆☆'
+    switch(rating) {
+        case 0:
+            stars = '☆☆☆☆☆'
+            break;
+        case 1:
+            stars = '★☆☆☆☆'
+            break;
+        case 2:
+            stars = '★★☆☆☆'
+            break;
+        case 3:
+            stars = '★★★☆☆'
+            break;
+        case 4:
+            stars = '★★★★☆'
+            break;
+        case 5:
+            stars = '★★★★★'
+            break;
+        default:
+            stars = '☆☆☆☆☆'
+    }
+}
+
 // API CALL: Query museums & populate Museum Picklist + stores museums locally
 const populateMusuemSelect = function() {
     fetch (`${curatedApi}/museums`, {
@@ -72,20 +100,47 @@ const domUpdateCollectionSelectOption = function(collection) {
     selectForm.appendChild(newOption)
 }
 
+// HELPER: add single artwork to collection grid
+const createNodeCollectionArtwork = function(artworkId) {
+    // Get artwork object
+    let newArtwork = artworkList.find(artwork => artwork.id = artworkId)
+
+    // Create Node Object
+    let newArtworkNode = document.createElement('div')
+    newArtworkNode.id = `collection-artwork-${newArtwork.id}`
+    newArtworkNode.className = `collection-artwork`
+    newArtworkNode.innerHTML = (`
+        <div class="collection-artwork-image">
+            <img class="collection-artwork-image" src="">
+        </div>
+        <div class="collection-artwork-detail">
+            <div class="collection-artwork-rating"></div>
+            <button class="delete-button">X</button>
+        </div>
+    `)
+    console.log(newArtworkNode)
+}
+
 // HELPER: Populate Collection Container with new collection cards
-const domUpdateCollectionList = function(collection) {
+const createNodeCollectionCard = function(collection) {
     let collectionContainerDiv = document.getElementById('collections-container')
+    
+    // Create collection card
     let newCollectionCard = document.createElement('div')
+    newCollectionCard.id = `collection-card-${collection.id}`
+    newCollectionCard.className = 'collections-card'
     newCollectionCard.innerHTML = (`
-        <div class="collection-card">
             <div class="header collection-header">
                 <h2 class="collection-name">${collection.name}</h2>
                 <button class="rename-collection">Edit</button>
                 <button class="delete-collection">X</button>
             </div>
             <div class="collection-flex-grid"></div>
-        </div>
     `)
+
+    createCollectionArtworkNode(12)
+    // Iterate over collections artworks
+    // collection.artworks.forEach(artwork => cb)
     console.log(newCollectionCard)
 }
 
