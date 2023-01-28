@@ -147,6 +147,12 @@ const createNodeCollectionCard = function(collection) {
             <div class="collection-flex-grid"></div>
     `)
     newCollectionCardNode.querySelector('h2').innerText = collection.name
+    // Remove edit and delete buttons from default collection
+    if (collection.id === 1) {
+        newCollectionCardNode.querySelector('div').childNodes.forEach(node => {
+            if (node.tagName === 'BUTTON') {node.remove()}
+        })
+    }
 
     // Iterate over collections artworks and append art to grid
     let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
