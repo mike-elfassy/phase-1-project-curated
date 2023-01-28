@@ -64,7 +64,7 @@ const createNodeSelectOption = function(obj) {
     return newOption
 }
 
-// API CALL: Query museums, save a local copy of array, and populate museum selectOptions
+// API GET: Query museums, save a local copy of array, and populate museum selectOptions
 const apiGetMuseums = function() {
     fetch (`${curatedApi}/museums`, {
         method: 'GET',
@@ -84,7 +84,7 @@ const apiGetMuseums = function() {
     .catch (error => console.error(`${error.message}`))
 }
 
-// API CALL: Query collections, save a local copy of array, populate collection selectOptions, and populate collections container
+// API GET: Query collections, save a local copy of array, populate collection selectOptions, and populate collections container
 const apiGetCollections = function() {
     fetch (`${curatedApi}/collections`, {
         method: 'GET',
@@ -163,7 +163,7 @@ const createNodeCollectionCard = function(collection) {
     return newCollectionCardNode
 }
 
-// API CALL: Query artworks (optional musem filter), save a local copy of array, and populate gallery hero
+// API GET: Query artworks (optional musem filter), save a local copy of array, and populate gallery hero
 const apiGetArtworks = function(museumName = 'all') {
     let searchQuery = ''
     if (museumName !== 'all') {searchQuery = `?museum=${museumName}`}
@@ -243,6 +243,27 @@ const calculateNewArtworkListIndex = function(currentIndex, increment) {
     return newIndex
 }
 
+// API POST: Create new collection object, update collections selectOptions, and add it to the DOM
+const apiPostCollection = function(collectionName = 'New Collection') { 
+    fetch (`${curatedApi}/collections`, {
+        method: 'POST',
+        headers: requestHeaders,
+        body: JSON.stringify({
+            name: collectionName,
+            artworkIds:[]
+        })
+    })
+    .then (response => response.json())
+    .then (collection => {
+        // Append to collection selctOptions
+        let collectionsSelectNode = document.querySelector('select#collection-select')
+        let collectionContainerNode = document.querySelector('div#collections-container')
+        // Append to collection container
+        collectionsSelectNode.appendChild(createNodeSelectOption(collection))
+        collectionContainerNode.appendChild(createNodeCollectionCard(collection))
+    })
+    .catch (error => console.error(`${error.message}`))
+}
 
 
 // Initialze page
