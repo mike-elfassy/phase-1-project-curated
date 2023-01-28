@@ -17,7 +17,7 @@ let artworkList = []
 let artworkListIndex = 0
 let collectionList = []
 
-// API Globals
+// Globals API Variables
 const curatedApi = 'http://localhost:3000'
 const requestHeaders = {
     'Content-Type': 'application/json',
@@ -31,7 +31,6 @@ const requestHeaders = {
 
 // HELPER: Translate 0-5 rating to stars
 const ratingToStars = function(rating) {
-    // ★☆
     let stars = '☆☆☆☆☆'
     switch(rating) {
         case 0:
@@ -58,29 +57,33 @@ const ratingToStars = function(rating) {
     return stars
 }
 
-// API CALL: Query museums & populate Museum Picklist + stores museums locally
-const populateMusuemSelect = function() {
+// API CALL: Query museum, populate museum selectOptions, and save a local copy of museum array
+const apiGetMuseums = function() {
     fetch (`${curatedApi}/museums`, {
         method: 'GET',
         headers: requestHeaders
     })
     .then (response => response.json())
     .then (museums => {
+        // Save local copy of musuem array
         museumList = [...museums]
-        museums.forEach(museum => domUpdateMuseumSelectOption(museum))
+
+        // Populate museum selectOptoion
+        let selectOption = document.querySelector('select#museum-select')
+        museums.forEach(museum => {
+            selectOption.appendChild(createNodeMuseumSelectOption(museum))
+        })
     })
     .catch (error => console.error(`${error.message}`))
 }
 
 // HELPER: Populate musuem picklist
-const domUpdateMuseumSelectOption = function(museum) {
-
-        let selectForm = document.querySelector('select#museum-select')
-        let newOption = document.createElement('option')
-        newOption.setAttribute('value',museum.id)
-        newOption.innerText = museum.name
-        
-        selectForm.appendChild(newOption)
+const createNodeMuseumSelectOption = function(museum) {
+    let newOption = document.createElement('option')
+    newOption.setAttribute('value',museum.id)
+    newOption.innerText = museum.name
+    
+    return newOption
 }
 
 // API CALL: Query collections & populate collection picklist
@@ -247,7 +250,7 @@ const calculateNewArtworkListIndex = function(currentIndex, increment, artworkLi
 
 
 // Initialze page
-populateMusuemSelect()
+apiGetMuseums()
 populateCollectionSelect()
 searchArtworkApi()
 
