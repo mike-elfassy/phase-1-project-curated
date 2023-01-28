@@ -12,10 +12,10 @@
 // CODE STARTS HERE
 
 // Globals Variables
-let museumList = []
-let artworkList = []
-let artworkListIndex = 0
-let collectionList = []
+let artworkList = [] // rename later
+let artworkListIndex = 0 
+let localMuseumArray = []
+let localCollectionList = []
 
 // Globals API Variables
 const curatedApi = 'http://localhost:3000'
@@ -23,8 +23,6 @@ const requestHeaders = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 }
-
-
 
 
 
@@ -57,7 +55,16 @@ const ratingToStars = function(rating) {
     return stars
 }
 
-// API CALL: Query museum, populate museum selectOptions, and save a local copy of museum array
+// HELPER: Create option node for musuems or collection selectOption
+const createNodeSelectOption = function(obj) {
+    let newOption = document.createElement('option')
+    newOption.setAttribute('value',obj.id)
+    newOption.innerText = obj.name
+    
+    return newOption
+}
+
+// API CALL: Query museums, save a local copy of array, and populate museum selectOptions
 const apiGetMuseums = function() {
     fetch (`${curatedApi}/museums`, {
         method: 'GET',
@@ -66,47 +73,34 @@ const apiGetMuseums = function() {
     .then (response => response.json())
     .then (museums => {
         // Save local copy of musuem array
-        museumList = [...museums]
+        localMuseumArray = [...museums]
 
         // Populate museum selectOptoion
-        let selectOption = document.querySelector('select#museum-select')
+        let museumSelectNode = document.querySelector('select#museum-select')
         museums.forEach(museum => {
-            selectOption.appendChild(createNodeMuseumSelectOption(museum))
+            museumSelectNode.appendChild(createNodeSelectOption(museum, 'museum'))
         })
     })
     .catch (error => console.error(`${error.message}`))
 }
 
-// HELPER: Populate musuem picklist
-const createNodeMuseumSelectOption = function(museum) {
-    let newOption = document.createElement('option')
-    newOption.setAttribute('value',museum.id)
-    newOption.innerText = museum.name
-    
-    return newOption
-}
-
-// API CALL: Query collections & populate collection picklist
-const populateCollectionSelect = function() {
+// API CALL: Query collections, save a local copy of array, populate collection selectOptions, and populate collections container
+const apiGetCollections = function() {
     fetch (`${curatedApi}/collections`, {
         method: 'GET',
         headers: requestHeaders
     })
     .then (response => response.json())
     .then (collections => {
-        collectionList = [...collections]
-        collections.forEach(collection => domUpdateCollectionSelectOption(collection))
+        // Save a local copy of collection array
+        localCollectionList = [...collections]
+        
+        // populate collection selctOptions
+        let collectionsSelectNode = document.querySelector('select#collection-select')
+        collections.forEach(collection => {
+            collectionsSelectNode.appendChild(createNodeSelectOption(collection))
+        })
     })
-}
-
-// HELPER: Populate collection picklist
-const domUpdateCollectionSelectOption = function(collection) {
-    let selectForm = document.querySelector('select#collection-select')
-    let newOption = document.createElement('option')
-    newOption.setAttribute('value',collection.id)
-    newOption.innerText = collection.name
-    
-    selectForm.appendChild(newOption)
 }
 
 // HELPER: add single artwork to collection grid
@@ -251,7 +245,7 @@ const calculateNewArtworkListIndex = function(currentIndex, increment, artworkLi
 
 // Initialze page
 apiGetMuseums()
-populateCollectionSelect()
+apiGetCollections()
 searchArtworkApi()
 
 
@@ -261,7 +255,7 @@ searchArtworkApi()
 // Add Event Handlers
 const handleSearchClick = function(event) {
     let museumId = document.getElementById('museum-select').value
-    let museum = museumList.find(museum => museum.id == museumId)
+    let museum = localMuseumArray.find(museum => museum.id == museumId)
     let museumName = 'all'
     if (museum) {museumName = museum.name}
     searchArtworkApi(museumName)
