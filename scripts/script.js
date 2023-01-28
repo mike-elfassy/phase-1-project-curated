@@ -1,6 +1,5 @@
 // Hero-Image-Card
 // fn3: event listerer & functions to rate/save artwork
-// fn3: event listener & function to move artwork side to side
 
 // Collections
 // fn1: create collection + name
@@ -16,7 +15,7 @@
 let museumList = []
 let artworkList = []
 let artworkListIndex = 0
-let collectionList = [1]
+let collectionList = []
 
 // API Globals
 const curatedApi = 'http://localhost:3000'
@@ -34,7 +33,7 @@ const populateMusuemSelect = function() {
     .then (response => response.json())
     .then (museums => {
         museumList = [...museums]
-        museums.forEach(museum => {domUpdateMuseumSelectOption(museum)})
+        museums.forEach(museum => domUpdateMuseumSelectOption(museum))
     })
     .catch (error => console.error(`${error.message}`))
 }
@@ -57,9 +56,10 @@ const populateCollectionSelect = function() {
         headers: requestHeaders
     })
     .then (response => response.json())
-    .then (collections => collections.forEach(collection => {
-        domUpdateCollectionSelectOption(collection)
-    }))
+    .then (collections => {
+        collectionList = [...collections]
+        collections.forEach(collection => domUpdateCollectionSelectOption(collection))
+    })
 }
 
 // HELPER: Populate collection picklist
@@ -70,6 +70,23 @@ const domUpdateCollectionSelectOption = function(collection) {
     newOption.innerText = collection.name
     
     selectForm.appendChild(newOption)
+}
+
+// HELPER: Populate Collection Container with new collection cards
+const domUpdateCollectionList = function(collection) {
+    let collectionContainerDiv = document.getElementById('collections-container')
+    let newCollectionCard = document.createElement('div')
+    newCollectionCard.innerHTML = (`
+        <div class="collection-card">
+            <div class="header collection-header">
+                <h2 class="collection-name">${collection.name}</h2>
+                <button class="rename-collection">Edit</button>
+                <button class="delete-collection">X</button>
+            </div>
+            <div class="collection-flex-grid"></div>
+        </div>
+    `)
+    console.log(newCollectionCard)
 }
 
 // API CALL: Search & return array of artworks
@@ -151,11 +168,9 @@ const populateHero = function(artworks, arrIndex = 0) {
 // HELPER: Update artwork array index for navigation
 const calculateNewArtworkListIndex = function(currentIndex, increment, artworkList) {
     let newIndex = currentIndex + increment
-    
-    // console.log('New Index:', newIndex, ", Max:", artworkList.length)
 
-    if (newIndex >= artworkList.length) {console.log('greater'); newIndex = 0}
-    else if (newIndex < 0) {console.log('less than'); newIndex = artworkList.length - 1}
+    if (newIndex >= artworkList.length) {newIndex = 0}
+    else if (newIndex < 0) {newIndex = artworkList.length - 1}
 
     return newIndex
 }
