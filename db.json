@@ -709,9 +709,9 @@
   "collections":
   [
       {
-          "id": 1,
-          "name": "Default",
-          "artworks":[]
+        "id": 1,
+        "name": "Default",
+        "artworks":[]
       },
       {
         "id": 2,

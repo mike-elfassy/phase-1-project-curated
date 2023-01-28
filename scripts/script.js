@@ -128,33 +128,34 @@ const createNodeCollectionArtwork = function(artworkId) {
     newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
     newArtworkNode.querySelector('div.collection-artwork-rating').innerText = newArtwork.rating
     
-
-    console.log(newArtworkNode)
-    
-    // console.log(newArtworkNode)
+    return newArtworkNode
 }
 
 // HELPER: Populate Collection Container with new collection cards
 const createNodeCollectionCard = function(collection) {
-    let collectionContainerDiv = document.getElementById('collections-container')
+    let collectionContainerNode = document.getElementById('collections-container')
     
     // Create collection card
-    let newCollectionCard = document.createElement('div')
-    newCollectionCard.id = `collection-card-${collection.id}`
-    newCollectionCard.className = 'collections-card'
-    newCollectionCard.innerHTML = (`
+    let newCollectionCardNode = document.createElement('div')
+    newCollectionCardNode.id = `collection-card-${collection.id}`
+    newCollectionCardNode.className = 'collections-card'
+    newCollectionCardNode.innerHTML = (`
             <div class="header collection-header">
-                <h2 class="collection-name">${collection.name}</h2>
+                <h2 class="collection-name"></h2>
                 <button class="rename-collection">Edit</button>
                 <button class="delete-collection">X</button>
             </div>
             <div class="collection-flex-grid"></div>
     `)
+    newCollectionCardNode.querySelector('h2').innerText = collection.name
 
-    createNodeCollectionArtwork(12)
-    // Iterate over collections artworks
-    // collection.artworks.forEach(artwork => cb)
-    // console.log(newCollectionCard)
+    // Iterate over collections artworks and append art to grid
+    let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
+    collection.artworks.forEach(artworkId => {
+        collectionGrid.appendChild(createNodeCollectionArtwork(artworkId))
+    })
+    
+    return newCollectionCardNode
 }
 
 // API CALL: Search & return array of artworks
