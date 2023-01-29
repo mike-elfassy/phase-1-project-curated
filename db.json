@@ -10,6 +10,7 @@
       "medium": "oil",
       "museum": "Tate Britain",
       "accession_number": "N06065",
+      "rating": null,
       "file": {
         "title": "'Cloud Study', by John Constable, 1822, Tate Britain.JPG",
         "file_description_url": "//commons.wikimedia.org/wiki/File:%27Cloud_Study%27,_by_John_Constable,_1822,_Tate_Britain.JPG",
@@ -49,6 +50,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N01543",
+      "rating": null,
       "file": {
         "title": "John William Waterhouse - The Lady of Shalott - Google Art Project edit.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
@@ -89,6 +91,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N00558 (Tate) NG558 (National Gallery)",
+      "rating": null,
       "file": {
         "title": "Joseph Mallord William Turner - A Disaster at Sea - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg",
@@ -128,6 +131,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N05064",
+      "rating": null,
       "file": {
         "title": "Dante Gabriel Rossetti - Proserpine - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg",
@@ -166,6 +170,7 @@
       "medium": "oil on canvas",
       "museum": "Musée des Beaux-Arts de Strasbourg",
       "accession_number": "T00772 (Tate Britain)",
+      "rating": null,
       "file": {
         "title": "Phillip James De Loutherbourg - An Avalanche in the Alps - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg",
@@ -205,6 +210,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "78696",
+      "rating": null,
       "file": {
         "title": "Vincent van Gogh - Starry Night - Google Art Project 2.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg",
@@ -251,6 +257,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N01615",
+      "rating": null,
       "file": {
         "title": "John Singer Sargent - Carnation, Lily, Lily, Rose - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:John_Singer_Sargent_-_Carnation,_Lily,_Lily,_Rose_-_Google_Art_Project.jpg",
@@ -289,6 +296,7 @@
       "medium": "oil on canvas",
       "museum": "Musée des Beaux-Arts de Strasbourg",
       "accession_number": "1062 (Musée des Beaux-Arts de Strasbourg)",
+      "rating": null,
       "file": {
         "title": "Philippe-Jacques Loutherbourg - Musée des Bx-Arts Strasbourg-Troupeau.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Philippe-Jacques_Loutherbourg_-_Mus%C3%A9e_des_Bx-Arts_Strasbourg-Troupeau.jpg",
@@ -326,6 +334,7 @@
       "date": "circa 1485",
       "medium": "oil on oak wood",
       "museum": "Musée des Beaux-Arts de Strasbourg",
+      "rating": null,
       "file": {
         "title": "Memling Vanity and Salvation.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Memling_Vanity_and_Salvation.jpg",
@@ -362,6 +371,7 @@
       "description": "Gideon; Adam and Eve (circa 1550), oils on wood by Martin van Heemskerck, at the Museum of Fine Arts in Strasbourg. Originally, a painting (lost) with the Virgin was placed between the two panels",
       "date": "29 September 2010",
       "museum": "Musée des Beaux-Arts de Strasbourg",
+      "rating": null,
       "file": {
         "title": "M.v.H. M.d.B.A. Strasbourg - Gideon.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:M.v.H._M.d.B.A._Strasbourg_-_Gideon.jpg",
@@ -439,6 +449,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "1485",
+      "rating": null,
       "file": {
         "title": "Paul Cézanne - Woman with a Coffeepot - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Paul_C%C3%A9zanne_-_Woman_with_a_Coffeepot_-_Google_Art_Project.jpg",
@@ -478,6 +489,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "715",
+      "rating": null,
       "file": {
         "title": "Claude Monet - The Magpie - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
@@ -517,6 +529,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "9137",
+      "rating": null,
       "file": {
         "title": "Henri Gervex - A Session of the Painting Jury - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Henri_Gervex_-_A_Session_of_the_Painting_Jury_-_Google_Art_Project.jpg",
@@ -554,6 +567,7 @@
       "description": "Français : Le grand pont entre l'île et Chatou pris dans la glace.",
       "date": "1895",
       "museum": "Musée d'Orsay",
+      "rating": null,
       "file": {
         "title": "La Seine est prise – Chatou, 1895, Gustave Maincent, musée d'Orsay.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:La_Seine_est_prise_%E2%80%93_Chatou,_1895,_Gustave_Maincent,_mus%C3%A9e_d%27Orsay.jpg",
@@ -594,6 +608,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "RF 2006 24 (Musée d'Orsay)",
+      "rating": null,
       "file": {
         "title": "André Devambez - Le seul oiseau qui vole au dessus des nuages - 1910 - Musee d'Orsay.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg",
@@ -642,7 +657,12 @@
     {
       "id": 1,
       "name": "Default",
-      "artworkIds": []
+      "artworkIds": [
+        1,
+        2,
+        3,
+        5
+      ]
     },
     {
       "id": 2,
@@ -662,8 +682,20 @@
       ]
     },
     {
-      "name": "sweet4",
-      "artworkIds": [],
+      "name": "test5",
+      "artworkIds": [
+        1,
+        2,
+        3
+      ],
+      "id": 5
+    },
+    {
+      "name": "test4",
+      "artworkIds": [
+        7,
+        8
+      ],
       "id": 4
     }
   ]

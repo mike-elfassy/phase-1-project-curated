@@ -129,7 +129,7 @@ const createNodeCollectionArtwork = function(artworkId) {
 
 // HELPER: Populate Collection Container with new collection cards
 const createNodeCollectionCard = function(collection) {
-    let collectionContainerNode = document.getElementById('collections-container')
+    // let collectionContainerNode = document.getElementById('collections-container')
     
     // Create collection card
     let newCollectionCardNode = document.createElement('div')
@@ -200,13 +200,15 @@ const populateHero = function(artworks, arrIndex = 0) {
     if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
     else newArtworks = [...artworks]
 
-    // HELPER: Populate Hero Image, Title, and Rating (right pane) based on artwork
+    // HELPER: Populate Hero Image, Title, and Rating (right pane) based on artwork. Store Artwork ID in the DOM
     function populateHeroImage(artwork) {
 
         let heroTitle = `${artwork.title}, ${artwork.artist}`
         let heroImage = `${artwork.file.preferred.url}`
         let heroRating = artwork.rating || 0
 
+        
+        document.getElementById('hero-title').setAttribute('artwork-id',artwork.id)
         document.getElementById('hero-title').innerText = heroTitle
         document.getElementById('hero-img').src = heroImage
         document.getElementById('rating-select').value = heroRating
@@ -337,6 +339,43 @@ const toggleCollectionCardNode = function(collectionCardNode, showInput = false)
 
 }
 
+// API GET PATCH: Get a collection artwork array and push a new artwork
+const apiGetPatchCollectionArtworkIds = function(collectionId, newArtworkId) {
+    // Get collection object
+    fetch (`${curatedApi}/collections/${collectionId}`, {
+        method: 'GET',
+        headers: requestHeaders
+    })
+    .then (response => response.json())
+    .then (collection => {
+        // Check if artwork already exists
+        if (collection.artworkIds.find(artworkId => artworkId === newArtworkId)) { alert('Artwork exists in collection'); return }
+        
+        // Create new object that only includes the artworkIds array
+        collection.artworkIds.push(newArtworkId)
+        let newArtworkIds = {artworkIds: [...collection.artworkIds]}
+        
+        // Update Server with new collection artwork array
+        fetch (`${curatedApi}/collections/${collectionId}`, {
+            method: 'PATCH',
+            headers: requestHeaders,
+            body: JSON.stringify(collection)
+        })
+        .then (response => response.json())
+        .then (() => {
+            // TBD: Update local copy of collection array
+            // console.log(localCollectionList[collectionId].artworkIds)
+            
+            // Add new artwork to DOM in collection artwork grid
+            let collectionCardNode = document.getElementById(`collection-card-${collectionId}`)
+            let collectionGridNode = collectionCardNode.querySelector('.collection-flex-grid')
+            collectionGridNode.appendChild(createNodeCollectionArtwork(newArtworkId))
+            
+        })
+        .catch (error => console.error(`${error.message}`))
+    })
+    .catch (error => console.error(`${error.message}`))
+}
 
 // Initialze page
 apiGetArtworks()
@@ -410,17 +449,15 @@ const handleDeleteArtworkFromCollection = function(event) {
     console.log('artworkId:', artworkId)
     console.log('collectionId:', collectionId)
 
-    
+
 }
 
-// const handleSaveToCollection = function(event) {
-//     let collectionId = 
-//     let artworkId = 
-//     let collectionPatchObj = {
-//             id: 1,
-//             name: "Default",
-//     }
-// }
+const handleSaveToCollection = function(event) {
+    let collectionId = document.getElementById('collection-select').value
+    let artworkId = document.getElementById('hero-title').getAttribute('artwork-id')
+    artworkId = parseInt(artworkId)
+    apiGetPatchCollectionArtworkIds(collectionId, artworkId)
+}
 
 
 // Add Event Listeners
@@ -433,7 +470,4 @@ document.querySelectorAll('button.left-right-button').forEach(node => node.addEv
 addEventListener('keydown', handleNav)
 
 // Create Collection
-document.querySelector('button.add-collection').addEventListener('click', handleCreateCollection)
-
-// Save to Collection
-// document.getElementById('save-to-collection').addEventListener('click', handleSaveToCollection)
+document.getElementById('save-to-collection').addEventListener('click', handleSaveToCollection)
