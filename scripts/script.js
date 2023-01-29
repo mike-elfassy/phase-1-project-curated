@@ -212,6 +212,8 @@ const populateHero = function(artworks, arrIndex = 0) {
         document.getElementById('hero-title').innerText = heroTitle
         document.getElementById('hero-img').src = heroImage
         document.getElementById('rating-select').value = heroRating
+        document.getElementById('rating-select').addEventListener('change', handleRateArtwork)
+        
     }
 
     // HELPER: Populate Hero Info (right pane) based on artwork
@@ -413,6 +415,22 @@ const apiGetDeleteCollectionArtworkId = function(collectionId, deleteArtworkId) 
     .catch (error => console.error(`${error.message}`))
 }
 
+// API PATCH: Update artwork rating
+const apiPatchArtworkRating = function(artworkId, newRating) {
+    let ratingPatchObj = {rating: newRating}
+    fetch (`${curatedApi}/artworks/${artworkId}`, {
+        method: 'PATCH',
+        headers: requestHeaders,
+        body: JSON.stringify(ratingPatchObj)
+    })
+    .then (response => response.json())
+    .then (() => {
+        // Update local copy of artwork array with new rating
+        localArtworkList[localArtworkCurrentIndex].rating = newRating
+    })
+    .catch (error => console.error(`${error.message}`))
+}
+
 // Initialze page
 apiGetArtworks()
 apiGetMuseums()
@@ -489,6 +507,12 @@ const handleSaveToCollection = function(event) {
     let artworkId = document.getElementById('hero-title').getAttribute('artwork-id')
     artworkId = parseInt(artworkId)
     apiGetPatchCollectionArtworkIds(collectionId, artworkId)
+}
+
+const handleRateArtwork = function(event) {
+    let artworkId = event.target.parentNode.parentNode.parentNode.querySelector('#hero-title').getAttribute('artwork-id')
+    let newRating = event.target.value
+    apiPatchArtworkRating(artworkId, newRating)
 }
 
 // Add Event Listeners
