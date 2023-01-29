@@ -205,8 +205,9 @@ const populateHero = function(artworks, arrIndex = 0) {
 
         let heroTitle = `${artwork.title}, ${artwork.artist}`
         let heroImage = `${artwork.file.preferred.url}`
-        let heroRating = artwork.rating || 0
-
+        let heroRating = 0
+        // console.log(artwork.rating)
+        if (!!artwork.rating || false) {heroRating = artwork.rating}
         
         document.getElementById('hero-title').setAttribute('artwork-id',artwork.id)
         document.getElementById('hero-title').innerText = heroTitle
@@ -353,13 +354,13 @@ const apiGetPatchCollectionArtworkIds = function(collectionId, newArtworkId) {
         
         // Create new object that only includes the artworkIds array
         collection.artworkIds.push(newArtworkId)
-        let newArtworkIds = {artworkIds: [...collection.artworkIds]}
+        let newArtworkIdsObj = {artworkIds: [...collection.artworkIds]}
         
         // Update Server with new collection artwork array
         fetch (`${curatedApi}/collections/${collectionId}`, {
             method: 'PATCH',
             headers: requestHeaders,
-            body: JSON.stringify(collection)
+            body: JSON.stringify(newArtworkIdsObj)
         })
         .then (response => response.json())
         .then (() => {
@@ -371,6 +372,42 @@ const apiGetPatchCollectionArtworkIds = function(collectionId, newArtworkId) {
             let collectionGridNode = collectionCardNode.querySelector('.collection-flex-grid')
             collectionGridNode.appendChild(createNodeCollectionArtwork(newArtworkId))
             
+        })
+        .catch (error => console.error(`${error.message}`))
+    })
+    .catch (error => console.error(`${error.message}`))
+}
+
+// API GET PATCH: Get a collection artwork array and push a new artwork
+const apiGetDeleteCollectionArtworkId = function(collectionId, deleteArtworkId) {
+    // Get collection object
+    fetch (`${curatedApi}/collections/${collectionId}`, {
+        method: 'GET',
+        headers: requestHeaders
+    })
+    .then (response => response.json())
+    .then (collection => {
+        // Create new object that only includes the modified artworkIds array
+        let newArtworkIdsArr = [...collection.artworkIds]
+        let deleteIndex = newArtworkIdsArr.findIndex(element => element === parseInt(deleteArtworkId))
+        newArtworkIdsArr.splice(deleteIndex, 1)
+        let newArtworkIdsObj = {artworkIds: [...newArtworkIdsArr]}
+
+        // Update Server with new collection artwork array
+        fetch (`${curatedApi}/collections/${collectionId}`, {
+            method: 'PATCH',
+            headers: requestHeaders,
+            body: JSON.stringify(newArtworkIdsObj)
+        })
+        .then (response => response.json())
+        .then (() => {
+            // TBD: Update local copy of collection array
+            // console.log(localCollectionList[collectionId].artworkIds)
+            
+            // Remove artwork from DOM in collection artwork grid
+            let collectionCardNode = document.getElementById(`collection-card-${collectionId}`)
+            let collectionArtworkNode = collectionCardNode.querySelector(`#collection-artwork-${deleteArtworkId}`)
+            collectionArtworkNode.remove()            
         })
         .catch (error => console.error(`${error.message}`))
     })
@@ -446,10 +483,7 @@ const handleDeleteArtworkFromCollection = function(event) {
     let artworkId = collectionArtworkNode.id.substring(19)
     let collectionId = collectionArtworkNode.parentNode.parentNode.id.substring(16)
 
-    console.log('artworkId:', artworkId)
-    console.log('collectionId:', collectionId)
-
-
+    apiGetDeleteCollectionArtworkId(collectionId, artworkId)
 }
 
 const handleSaveToCollection = function(event) {
@@ -458,7 +492,6 @@ const handleSaveToCollection = function(event) {
     artworkId = parseInt(artworkId)
     apiGetPatchCollectionArtworkIds(collectionId, artworkId)
 }
-
 
 // Add Event Listeners
 
