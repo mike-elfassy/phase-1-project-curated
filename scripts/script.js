@@ -105,7 +105,6 @@ const apiGetCollections = function() {
 const createNodeCollectionArtwork = function(artworkId) {
     // Get artwork object
     let newArtwork = localArtworkList.find(artwork => artwork.id === artworkId)
-    newArtwork.rating = ratingToStars(newArtwork.rating || 0)
     
     // Create Node Object
     let newArtworkNode = document.createElement('div')
@@ -121,7 +120,7 @@ const createNodeCollectionArtwork = function(artworkId) {
         </div>
     `)
     newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
-    newArtworkNode.querySelector('div.collection-artwork-rating').innerText = newArtwork.rating
+    newArtworkNode.querySelector('div.collection-artwork-rating').innerText = ratingToStars(newArtwork.rating || 0)
     newArtworkNode.querySelector('button.delete-button').addEventListener('click', handleDeleteArtworkFromCollection)
     
     return newArtworkNode
@@ -443,7 +442,6 @@ const handleNav = function(event) {
         else {return}
     }
     else {return}
-
     // Update Hero Image
     localArtworkCurrentIndex = calculateNewArtworkListIndex(localArtworkCurrentIndex, direction)
     populateHero(localArtworkList[localArtworkCurrentIndex])

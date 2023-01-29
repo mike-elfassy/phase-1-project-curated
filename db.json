@@ -10,7 +10,7 @@
       "medium": "oil",
       "museum": "Tate Britain",
       "accession_number": "N06065",
-      "rating": null,
+      "rating": 2,
       "file": {
         "title": "'Cloud Study', by John Constable, 1822, Tate Britain.JPG",
         "file_description_url": "//commons.wikimedia.org/wiki/File:%27Cloud_Study%27,_by_John_Constable,_1822,_Tate_Britain.JPG",
@@ -658,22 +658,15 @@
       "id": 1,
       "name": "Default",
       "artworkIds": [
-        6
+        1,2
       ]
     },
     {
       "id": 2,
       "name": "First Favorites",
       "artworkIds": [
-        13
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Second Favorites",
-      "artworkIds": [
-        10,
-        13
+        13,
+        6
       ]
     },
     {
