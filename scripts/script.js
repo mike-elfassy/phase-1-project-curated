@@ -2,10 +2,6 @@
 // fn3: event listerer & functions to rate/save artwork
 
 // Collections
-// fn1: create collection + name
-// fn2: fetch all collections & display them
-// fn3: fetch all artworks in the collectio & display them
-// fn4: delete collection
 // fn5: delete artwork from collection
 
 
@@ -126,6 +122,7 @@ const createNodeCollectionArtwork = function(artworkId) {
     `)
     newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
     newArtworkNode.querySelector('div.collection-artwork-rating').innerText = newArtwork.rating
+    newArtworkNode.querySelector('button.delete-button').addEventListener('click', handleDeleteArtworkFromCollection)
     
     return newArtworkNode
 }
@@ -405,14 +402,38 @@ const handleDeleteCollection = function(event) {
     apiDeleteCollection(collectionId)
 }
 
+const handleDeleteArtworkFromCollection = function(event) {
+    let collectionArtworkNode = event.target.parentNode.parentNode
+    let artworkId = collectionArtworkNode.id.substring(19)
+    let collectionId = collectionArtworkNode.parentNode.parentNode.id.substring(16)
+
+    console.log('artworkId:', artworkId)
+    console.log('collectionId:', collectionId)
+
+    
+}
+
+// const handleSaveToCollection = function(event) {
+//     let collectionId = 
+//     let artworkId = 
+//     let collectionPatchObj = {
+//             id: 1,
+//             name: "Default",
+//     }
+// }
 
 
 // Add Event Listeners
 
 // Search Musuems
 document.getElementById('search-artwork').addEventListener('click', handleSearchClick)
+
 // Left/Right navigation on artwork
 document.querySelectorAll('button.left-right-button').forEach(node => node.addEventListener('click', handleNav))
 addEventListener('keydown', handleNav)
+
 // Create Collection
 document.querySelector('button.add-collection').addEventListener('click', handleCreateCollection)
+
+// Save to Collection
+// document.getElementById('save-to-collection').addEventListener('click', handleSaveToCollection)
