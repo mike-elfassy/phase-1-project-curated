@@ -657,7 +657,9 @@
     {
       "id": 1,
       "name": "Default",
-      "artworkIds": []
+      "artworkIds": [
+        1
+      ]
     },
     {
       "id": 2,

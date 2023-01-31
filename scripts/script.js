@@ -1,64 +1,21 @@
-// Hero-Image-Card
-// fn3: event listerer & functions to rate/save artwork
+// --------------------
+//   GLOBAL VARIABLES
+// --------------------
 
-// Collections
-// fn5: delete artwork from collection
-
-
-// CODE STARTS HERE
-
-// Globals Variables
 let localArtworkList = []
 let localArtworkCurrentIndex = 0 
 let localMuseumArray = []
 let localCollectionList = []
 
-// Globals API Variables
 const curatedApi = 'http://localhost:3000'
 const requestHeaders = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 }
 
-
-
-
-// HELPER: Translate 0-5 rating to stars
-const ratingToStars = function(rating) {
-    let stars = '☆☆☆☆☆'
-    switch(rating) {
-        case 0:
-            stars = '☆☆☆☆☆'
-            break;
-        case 1:
-            stars = '★☆☆☆☆'
-            break;
-        case 2:
-            stars = '★★☆☆☆'
-            break;
-        case 3:
-            stars = '★★★☆☆'
-            break;
-        case 4:
-            stars = '★★★★☆'
-            break;
-        case 5:
-            stars = '★★★★★'
-            break;
-        default:
-            stars = '☆☆☆☆☆'
-    }
-    return stars
-}
-
-// HELPER: Create option node for musuems or collection selectOption
-const createNodeSelectOption = function(obj) {
-    let newOption = document.createElement('option')
-    newOption.setAttribute('value',obj.id)
-    newOption.innerText = obj.name
-    
-    return newOption
-}
+// --------------------
+//     API Requests
+// --------------------
 
 // API GET: Query museums, save a local copy of array, and populate museum selectOptions
 const apiGetMuseums = function() {
@@ -101,76 +58,6 @@ const apiGetCollections = function() {
     })
 }
 
-// HELPER: Add single artwork to collection grid
-const createNodeCollectionArtwork = function(artworkId) {
-    // Get artwork object
-    let newArtwork = localArtworkList.find(artwork => artwork.id === artworkId)
-    
-    // Create Node Object
-    let newArtworkNode = document.createElement('div')
-    newArtworkNode.id = `collection-artwork-${newArtwork.id}`
-    newArtworkNode.className = `collection-artwork`
-    newArtworkNode.innerHTML = (`
-        <div class="collection-artwork-image">
-            <img class="collection-artwork-image" src="">
-        </div>
-        <div class="collection-artwork-detail">
-            <div class="collection-artwork-rating"></div>
-            <button class="delete-button">X</button>
-        </div>
-    `)
-    newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
-    newArtworkNode.querySelector('div.collection-artwork-rating').innerText = ratingToStars(newArtwork.rating || 0)
-    newArtworkNode.querySelector('button.delete-button').addEventListener('click', handleDeleteArtworkFromCollection)
-    
-    return newArtworkNode
-}
-
-// HELPER: Populate Collection Container with new collection cards
-const createNodeCollectionCard = function(collection) {
-    // let collectionContainerNode = document.getElementById('collections-container')
-    
-    // Create collection card
-    let newCollectionCardNode = document.createElement('div')
-    newCollectionCardNode.id = `collection-card-${collection.id}`
-    newCollectionCardNode.className = 'collections-card'
-    newCollectionCardNode.innerHTML = (`
-            <div class="header collection-header">
-                <h2 class="collection-name"></h2>
-                <input class="collection-name-input" style="display:none"></input>
-                <button class="edit-collection">Edit</button>
-                <button class="cancel-collection" style="display:none">Cancel</button>
-                <button class="rename-collection" style="display:none">Rename</button>
-                <button class="delete-collection">X</button>
-            </div>
-            <div class="collection-flex-grid"></div>
-    `)
-    newCollectionCardNode.querySelector('h2').innerText = collection.name
-    newCollectionCardNode.querySelector('input').value = collection.name
-
-    // Iterate over collections artworks and append art to grid
-    let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
-    collection.artworkIds.forEach(artworkId => {
-        collectionGrid.appendChild(createNodeCollectionArtwork(artworkId))
-    })
-
-    // Add event listeners for Cancel, Rename, Edit, and Delete buttons
-    newCollectionCardNode.querySelector('button.cancel-collection').addEventListener('click', handleCancelCollection)
-    newCollectionCardNode.querySelector('button.rename-collection').addEventListener('click', handleRenameCollection)
-    newCollectionCardNode.querySelector('button.edit-collection').addEventListener('click', handleEditCollection)
-    newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
-
-    // Remove input, edit, rename, and delete nodes from default collection
-    if (collection.id === 1) {
-        newCollectionCardNode.querySelector('div').childNodes.forEach(node => {
-              if (node.tagName === 'BUTTON') {node.remove()}
-              if (node.tagName === 'INPUT') {node.remove()}
-        })
-    }
-    
-    return newCollectionCardNode
-}
-
 // API GET: Query artworks (optional musem filter), save a local copy of array, and populate gallery hero
 const apiGetArtworks = function(museumName = 'all') {
     let searchQuery = ''
@@ -190,70 +77,6 @@ const apiGetArtworks = function(museumName = 'all') {
         populateHero(localArtworkList[localArtworkCurrentIndex])
     })
     .catch (error => console.error(`${error.message}`))
-}
-
-// HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
-const populateHero = function(artworks, arrIndex = 0) {
-    // Handle object vs array
-    let newArtworks = []
-    if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
-    else newArtworks = [...artworks]
-
-    // HELPER: Populate Hero Image, Title, and Rating (right pane) based on artwork. Store Artwork ID in the DOM
-    function populateHeroImage(artwork) {
-
-        let heroTitle = `${artwork.title}, ${artwork.artist}`
-        let heroImage = `${artwork.file.preferred.url}`
-        let heroRating = 0
-        // console.log(artwork.rating)
-        if (!!artwork.rating || false) {heroRating = artwork.rating}
-        
-        document.getElementById('hero-title').setAttribute('artwork-id',artwork.id)
-        document.getElementById('hero-title').innerText = heroTitle
-        document.getElementById('hero-img').src = heroImage
-        document.getElementById('rating-select').value = heroRating
-        document.getElementById('rating-select').addEventListener('change', handleRateArtwork)
-        
-    }
-
-    // HELPER: Populate Hero Info (right pane) based on artwork
-    function populateHeroInfo(artwork) {
-
-        // Iterate li elements
-        const createListItem = function(keyText, valText) {
-            let liElement = document.createElement('li')
-            let strongElement = document.createElement('strong')
-            
-            liElement.innerText = valText
-            strongElement.innerText = keyText
-            liElement.prepend(strongElement)
-
-            document.getElementById('artwork-info-list').appendChild(liElement)
-        }
-
-        // Delete exisiting li elements
-        document.getElementById('artwork-info-list').innerHTML = ''
-
-        // Can enhance this to iterate over object
-        createListItem('Artist: ', `${artwork.artist} ${artwork.artist_lifespan}`)
-        createListItem('Artwork Date: ', artwork.date)
-        createListItem('Museum: ', artwork.museum)
-        createListItem('Genre: ', artwork.genre)
-        createListItem('Medium: ', artwork.medium)
-    }
-
-    populateHeroImage(newArtworks[arrIndex])
-    populateHeroInfo(newArtworks[arrIndex])
-}
-
-// HELPER: Update artwork array index for navigation
-const calculateNewArtworkListIndex = function(currentIndex, increment) {
-    let newIndex = currentIndex + increment
-
-    if (newIndex >= localArtworkList.length) {newIndex = 0}
-    else if (newIndex < 0) {newIndex = localArtworkList.length - 1}
-
-    return newIndex
 }
 
 // API POST: Create new collection object, update collections selectOptions, and add it to the DOM
@@ -314,31 +137,6 @@ const apiPatchCollection = function(collectionId = null, collectionPatchObj = nu
         toggleCollectionCardNode(collectionCardNode, false)
     })
     .catch (error => console.error(`${error.message}`))
-}
-
-// HELPER: Toggle visibility on collection card header
-const toggleCollectionCardNode = function(collectionCardNode, showInput = false) {
-    let collectionNameNode = collectionCardNode.querySelector('h2.collection-name')
-    let collectionNameInputNode = collectionCardNode.querySelector('input.collection-name-input')
-    let editCollectionNode = collectionCardNode.querySelector('button.edit-collection')
-    let renameCollectionNode = collectionCardNode.querySelector('button.rename-collection')
-    let cancelCollectionNode = collectionCardNode.querySelector('button.cancel-collection')
-
-    if (showInput) {
-        collectionNameNode.style.display = 'none'
-        collectionNameInputNode.style.display = 'block'
-        editCollectionNode.style.display = 'none'
-        cancelCollectionNode.style.display = 'block'
-        renameCollectionNode.style.display = 'block'
-    }
-    else {
-        collectionNameNode.style.display = 'block'
-        collectionNameInputNode.style.display = 'none'
-        editCollectionNode.style.display = 'block'
-        cancelCollectionNode.style.display = 'none'
-        renameCollectionNode.style.display = 'none'
-    }
-
 }
 
 // API GET PATCH: Get a collection artwork array and push a new artwork
@@ -431,14 +229,214 @@ const apiPatchArtworkRating = function(artworkId, newRating) {
     .catch (error => console.error(`${error.message}`))
 }
 
-// Initialze page
-apiGetArtworks()
-apiGetMuseums()
-apiGetCollections()
+// --------------------
+//    DOM MODIFIERS
+// --------------------
 
+// DOM: Create option node for musuems or collection selectOption
+const createNodeSelectOption = function(obj) {
+    let newOption = document.createElement('option')
+    newOption.setAttribute('value',obj.id)
+    newOption.innerText = obj.name
+    
+    return newOption
+}
 
+// DOM: Add single artwork to collection grid
+const createNodeCollectionArtwork = function(artworkId) {
+    // Get artwork object
+    let newArtwork = localArtworkList.find(artwork => artwork.id === artworkId)
+    
+    // Create Node Object
+    let newArtworkNode = document.createElement('div')
+    newArtworkNode.id = `collection-artwork-${newArtwork.id}`
+    newArtworkNode.className = `collection-artwork`
+    newArtworkNode.innerHTML = (`
+        <div class="collection-artwork-image">
+            <img class="collection-artwork-image" src="">
+        </div>
+        <div class="collection-artwork-detail">
+            <div class="collection-artwork-rating"></div>
+            <button class="delete-button">X</button>
+        </div>
+    `)
+    newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
+    newArtworkNode.querySelector('div.collection-artwork-rating').innerText = ratingToStars(newArtwork.rating || 0)
+    newArtworkNode.querySelector('button.delete-button').addEventListener('click', handleDeleteArtworkFromCollection)
+    
+    return newArtworkNode
+}
 
-// Event Handler Definitions
+// HELPER: Populate Collection Container with new collection cards
+const createNodeCollectionCard = function(collection) {
+    // let collectionContainerNode = document.getElementById('collections-container')
+    
+    // Create collection card
+    let newCollectionCardNode = document.createElement('div')
+    newCollectionCardNode.id = `collection-card-${collection.id}`
+    newCollectionCardNode.className = 'collections-card'
+    newCollectionCardNode.innerHTML = (`
+            <div class="header collection-header">
+                <h2 class="collection-name"></h2>
+                <input class="collection-name-input" style="display:none"></input>
+                <button class="edit-collection">Edit</button>
+                <button class="cancel-collection" style="display:none">Cancel</button>
+                <button class="rename-collection" style="display:none">Rename</button>
+                <button class="delete-collection">X</button>
+            </div>
+            <div class="collection-flex-grid"></div>
+    `)
+    newCollectionCardNode.querySelector('h2').innerText = collection.name
+    newCollectionCardNode.querySelector('input').value = collection.name
+
+    // Iterate over collections artworks and append art to grid
+    let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
+    collection.artworkIds.forEach(artworkId => {
+        collectionGrid.appendChild(createNodeCollectionArtwork(artworkId))
+    })
+
+    // Add event listeners for Cancel, Rename, Edit, and Delete buttons
+    newCollectionCardNode.querySelector('button.cancel-collection').addEventListener('click', handleCancelCollection)
+    newCollectionCardNode.querySelector('button.rename-collection').addEventListener('click', handleRenameCollection)
+    newCollectionCardNode.querySelector('button.edit-collection').addEventListener('click', handleEditCollection)
+    newCollectionCardNode.querySelector('button.delete-collection').addEventListener('click', handleDeleteCollection)
+
+    // Remove input, edit, rename, and delete nodes from default collection
+    if (collection.id === 1) {
+        newCollectionCardNode.querySelector('div').childNodes.forEach(node => {
+              if (node.tagName === 'BUTTON') {node.remove()}
+              if (node.tagName === 'INPUT') {node.remove()}
+        })
+    }
+    
+    return newCollectionCardNode
+}
+
+// --------------------
+//    HELPERS
+// --------------------
+
+// HELPER: Translate 0-5 rating to stars
+const ratingToStars = function(rating) {
+    let stars = '☆☆☆☆☆'
+    switch(rating) {
+        case 0:
+            stars = '☆☆☆☆☆'
+            break;
+        case 1:
+            stars = '★☆☆☆☆'
+            break;
+        case 2:
+            stars = '★★☆☆☆'
+            break;
+        case 3:
+            stars = '★★★☆☆'
+            break;
+        case 4:
+            stars = '★★★★☆'
+            break;
+        case 5:
+            stars = '★★★★★'
+            break;
+        default:
+            stars = '☆☆☆☆☆'
+    }
+    return stars
+}
+
+// HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
+const populateHero = function(artworks, arrIndex = 0) {
+    // Handle object vs array
+    let newArtworks = []
+    if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
+    else newArtworks = [...artworks]
+
+    // HELPER: Populate Hero Image, Title, and Rating (right pane) based on artwork. Store Artwork ID in the DOM
+    function populateHeroImage(artwork) {
+
+        let heroTitle = `${artwork.title}, ${artwork.artist}`
+        let heroImage = `${artwork.file.preferred.url}`
+        let heroRating = 0
+        // console.log(artwork.rating)
+        if (!!artwork.rating || false) {heroRating = artwork.rating}
+        
+        document.getElementById('hero-title').setAttribute('artwork-id',artwork.id)
+        document.getElementById('hero-title').innerText = heroTitle
+        document.getElementById('hero-img').src = heroImage
+        document.getElementById('rating-select').value = heroRating
+        document.getElementById('rating-select').addEventListener('change', handleRateArtwork)
+        
+    }
+
+    // HELPER: Populate Hero Info (right pane) based on artwork
+    function populateHeroInfo(artwork) {
+
+        // Iterate li elements
+        const createListItem = function(keyText, valText) {
+            let liElement = document.createElement('li')
+            let strongElement = document.createElement('strong')
+            
+            liElement.innerText = valText
+            strongElement.innerText = keyText
+            liElement.prepend(strongElement)
+
+            document.getElementById('artwork-info-list').appendChild(liElement)
+        }
+
+        // Delete exisiting li elements
+        document.getElementById('artwork-info-list').innerHTML = ''
+
+        // Can enhance this to iterate over object
+        createListItem('Artist: ', `${artwork.artist} ${artwork.artist_lifespan}`)
+        createListItem('Artwork Date: ', artwork.date)
+        createListItem('Museum: ', artwork.museum)
+        createListItem('Genre: ', artwork.genre)
+        createListItem('Medium: ', artwork.medium)
+    }
+
+    populateHeroImage(newArtworks[arrIndex])
+    populateHeroInfo(newArtworks[arrIndex])
+}
+
+// HELPER: Update artwork array index for navigation
+const calculateNewArtworkListIndex = function(currentIndex, increment) {
+    let newIndex = currentIndex + increment
+
+    if (newIndex >= localArtworkList.length) {newIndex = 0}
+    else if (newIndex < 0) {newIndex = localArtworkList.length - 1}
+
+    return newIndex
+}
+
+// HELPER: Toggle visibility on collection card header
+const toggleCollectionCardNode = function(collectionCardNode, showInput = false) {
+    let collectionNameNode = collectionCardNode.querySelector('h2.collection-name')
+    let collectionNameInputNode = collectionCardNode.querySelector('input.collection-name-input')
+    let editCollectionNode = collectionCardNode.querySelector('button.edit-collection')
+    let renameCollectionNode = collectionCardNode.querySelector('button.rename-collection')
+    let cancelCollectionNode = collectionCardNode.querySelector('button.cancel-collection')
+
+    if (showInput) {
+        collectionNameNode.style.display = 'none'
+        collectionNameInputNode.style.display = 'block'
+        editCollectionNode.style.display = 'none'
+        cancelCollectionNode.style.display = 'block'
+        renameCollectionNode.style.display = 'block'
+    }
+    else {
+        collectionNameNode.style.display = 'block'
+        collectionNameInputNode.style.display = 'none'
+        editCollectionNode.style.display = 'block'
+        cancelCollectionNode.style.display = 'none'
+        renameCollectionNode.style.display = 'none'
+    }
+
+}
+
+// --------------------
+//    EVENT HANDLERS
+// --------------------
+
 const handleSearchClick = function(event) {
     let museumId = document.getElementById('museum-select').value
     let museum = localMuseumArray.find(museum => museum.id == museumId)
@@ -515,7 +513,17 @@ const handleRateArtwork = function(event) {
     apiPatchArtworkRating(artworkId, newRating)
 }
 
-// Add Event Listeners
+// --------------------
+//   INITIALIZE PAGE
+// --------------------
+
+apiGetArtworks()
+apiGetMuseums()
+apiGetCollections()
+
+// --------------------
+//    EVENT LISTENERS
+// --------------------
 
 // Search Musuems
 document.getElementById('search-artwork').addEventListener('click', handleSearchClick)
