@@ -10,7 +10,7 @@
       "medium": "oil",
       "museum": "Tate Britain",
       "accession_number": "N06065",
-      "rating": "3",
+      "rating": "0",
       "file": {
         "title": "'Cloud Study', by John Constable, 1822, Tate Britain.JPG",
         "file_description_url": "//commons.wikimedia.org/wiki/File:%27Cloud_Study%27,_by_John_Constable,_1822,_Tate_Britain.JPG",
@@ -50,7 +50,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N01543",
-      "rating": "2",
+      "rating": "3",
       "file": {
         "title": "John William Waterhouse - The Lady of Shalott - Google Art Project edit.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
@@ -204,7 +204,7 @@
       "id": 6,
       "artist": "Vincent van Gogh",
       "artist_lifespan": "(1853–1890)",
-      "title": "English: La Nuit étoiléeStarry Night",
+      "title": "Starry Night Over The Rhone",
       "date": "1888",
       "genre": "landscape art",
       "medium": "oil on canvas",
@@ -666,14 +666,16 @@
       "name": "First Favorites",
       "artworkIds": [
         13,
-        6
+        6,
+        1
       ]
     },
     {
       "name": "test5",
       "artworkIds": [
         1,
-        3
+        3,
+        5
       ],
       "id": 5
     },

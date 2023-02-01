@@ -267,7 +267,7 @@ const createNodeCollectionArtwork = function(artworkId) {
     return newArtworkNode
 }
 
-// HELPER: Populate Collection Container with new collection cards
+// DOM: Populate Collection Container with new collection cards
 const createNodeCollectionCard = function(collection) {
     // let collectionContainerNode = document.getElementById('collections-container')
     
@@ -312,6 +312,60 @@ const createNodeCollectionCard = function(collection) {
     return newCollectionCardNode
 }
 
+// DOM: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
+const populateHero = function(artworks, arrIndex = 0) {
+    // Handle object vs array
+    let newArtworks = []
+    if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
+    else newArtworks = [...artworks]
+
+    // DOM: Populate Hero Image, Title, and Rating (right pane) based on artwork. Store Artwork ID in the DOM
+    function populateHeroImage(artwork) {
+
+        let heroTitle = `${artwork.title}, ${artwork.artist}`
+        let heroImage = `${artwork.file.preferred.url}`
+        let heroRating = 0
+        // console.log(artwork.rating)
+        if (!!artwork.rating || false) {heroRating = artwork.rating}
+        
+        document.getElementById('hero-title').setAttribute('artwork-id',artwork.id)
+        document.getElementById('hero-title').firstChild.innerText = heroTitle
+        document.getElementById('hero-img').src = heroImage
+        document.getElementById('rating-select').value = heroRating
+        document.getElementById('rating-select').addEventListener('change', handleRateArtwork)
+        
+    }
+
+    // DOM: Populate Hero Info (right pane) based on artwork
+    function populateHeroInfo(artwork) {
+
+        // Iterate li elements
+        const createListItem = function(keyText, valText) {
+            let liElement = document.createElement('li')
+            let strongElement = document.createElement('strong')
+            
+            liElement.innerText = valText
+            strongElement.innerText = keyText
+            liElement.prepend(strongElement)
+
+            document.getElementById('artwork-info-list').appendChild(liElement)
+        }
+
+        // Delete exisiting li elements
+        document.getElementById('artwork-info-list').innerHTML = ''
+
+        // Can enhance this to iterate over object
+        createListItem('Artist', `: ${artwork.artist} ${artwork.artist_lifespan}`)
+        createListItem('Artwork Date', `: ${artwork.date}`)
+        createListItem('Museum', `: ${artwork.museum}`)
+        createListItem('Genre', `: ${artwork.genre}`)
+        createListItem('Medium', `: ${artwork.medium}`)
+    }
+
+    populateHeroImage(newArtworks[arrIndex])
+    populateHeroInfo(newArtworks[arrIndex])
+}
+
 // --------------------
 //    HELPERS
 // --------------------
@@ -342,60 +396,6 @@ const ratingToStars = function(rating) {
             stars = '☆☆☆☆☆'
     }
     return stars
-}
-
-// HELPER: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
-const populateHero = function(artworks, arrIndex = 0) {
-    // Handle object vs array
-    let newArtworks = []
-    if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
-    else newArtworks = [...artworks]
-
-    // HELPER: Populate Hero Image, Title, and Rating (right pane) based on artwork. Store Artwork ID in the DOM
-    function populateHeroImage(artwork) {
-
-        let heroTitle = `${artwork.title}, ${artwork.artist}`
-        let heroImage = `${artwork.file.preferred.url}`
-        let heroRating = 0
-        // console.log(artwork.rating)
-        if (!!artwork.rating || false) {heroRating = artwork.rating}
-        
-        document.getElementById('hero-title').setAttribute('artwork-id',artwork.id)
-        document.getElementById('hero-title').innerText = heroTitle
-        document.getElementById('hero-img').src = heroImage
-        document.getElementById('rating-select').value = heroRating
-        document.getElementById('rating-select').addEventListener('change', handleRateArtwork)
-        
-    }
-
-    // HELPER: Populate Hero Info (right pane) based on artwork
-    function populateHeroInfo(artwork) {
-
-        // Iterate li elements
-        const createListItem = function(keyText, valText) {
-            let liElement = document.createElement('li')
-            let strongElement = document.createElement('strong')
-            
-            liElement.innerText = valText
-            strongElement.innerText = keyText
-            liElement.prepend(strongElement)
-
-            document.getElementById('artwork-info-list').appendChild(liElement)
-        }
-
-        // Delete exisiting li elements
-        document.getElementById('artwork-info-list').innerHTML = ''
-
-        // Can enhance this to iterate over object
-        createListItem('Artist: ', `${artwork.artist} ${artwork.artist_lifespan}`)
-        createListItem('Artwork Date: ', artwork.date)
-        createListItem('Museum: ', artwork.museum)
-        createListItem('Genre: ', artwork.genre)
-        createListItem('Medium: ', artwork.medium)
-    }
-
-    populateHeroImage(newArtworks[arrIndex])
-    populateHeroInfo(newArtworks[arrIndex])
 }
 
 // HELPER: Update artwork array index for navigation

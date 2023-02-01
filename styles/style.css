@@ -1,11 +1,16 @@
+/* --------------------
+    GENERAL STYLES
+-------------------- */
+
 * {
-    margin: 0px;
+    margin: 0;
     padding: 0;
     border: 0;
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
-    background: transparent;
+    background-color: transarent;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* html {
@@ -15,53 +20,211 @@
 } */
 
 body {
-    background-color: white;
+    background-color: rgb(234, 234, 234);
 }
 
 div {
+    /* border-width: 1px;
+    border-color: rgb(254, 0, 0);
+    border-style: solid; */
+    
     /* min-height: 100%; */
     /* min-width: 100%; */
-    /* background: rgba(207,207,207,100); */
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgb(0, 0, 0);
+    /* background: rgb(255, 255, 255); */
+    /* margin: 5px; */
+    /* padding: 5px; */
+}
+
+.card {
     margin: 5px;
     padding: 5px;
-}
+    
+    background-color: rgb(255, 255, 255);
 
-div#page-header {
-    font-family: 'Bakbak One', cursive;
-    font-size: 30px;
-    text-align: center;
-    margin: 0 0 10px 0;
-    border-width: 0 0 1px 0;
-    box-shadow: 0 10px 2px 2px rgba(0, 0, 0, .1);
-}
-
-div.card {
-
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, .1);
+    
 }
 
 button {
+    margin: 5px auto;
+    padding: 5px 15px;
+    
     background-color: rgba(0, 0, 0, 1);
+    
     color: white;
     text-align: center;
     text-decoration: none;
+    
+    border-radius: 5px;
+    
     display: inline-block;
     cursor: pointer;
 }
 
-#header {
-    height: 60px;
+/* --------------------
+    Page Header
+-------------------- */
+
+#page-header {
+    margin: 0 0 10px 0;
+    padding: 10px 0px;
+
+    background-color: rgba(255, 255, 255, 1);
+
+    font-family: 'Bakbak One', cursive;
+    font-size: 200%;
+    text-align: center;
+    
+    border-width: 0 0 1px 0;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .1);
 }
 
-#gallery-container {
-    min-height: 200px;
+/* --------------------
+    GALLERY GENERAL
+-------------------- */
+
+#gallery-card {
+    height: 400px;
+    padding: 10px;
 }
 
-/* #collections-card {
+.gallery-grid {
+    display: inline-grid;
+    grid-template-columns: [first] 25% [second] auto [end];
+    grid-template-rows: [first] 40px [second] 260px [third] 80px [end];
+    grid-template-areas:
+        "header header"
+        "info hero"
+        "museum nav"    
+    ;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
+}
 
-} */
+/* --------------------
+    GALLERY DETAILS
+-------------------- */
+
+#hero-title {
+    grid-area: header;
+    font-size: 140%;
+
+    line-height: 40px;
+    /* align-content: center; */
+    text-align: center;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+}
+
+    #hero-title > p {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+    }
+
+#hero-info {
+    grid-area: info;
+}
+
+    #hero-info h2 {
+        margin: 0 0 10px 0;
+        /* text-decoration: underline; */
+    }
+
+#hero-div {
+    grid-area: hero;
+    /* height: 270px; */
+    text-align: center;
+}
+
+    #hero-img {
+        margin: auto;
+        display: inline-block;
+        height: 100%;
+        vertical-align: center;
+        max-width: 100%;
+}
+
+#museum-div {
+    grid-area: museum;
+}
+
+    .museum-title {
+        font-size: 125%;
+        /* font-weight: bold; */
+        /* font-style: italic; */
+        margin: 0 0 5px 0;
+    }
+
+    .custom-select {
+        border-width: 1px;
+        border-radius: 2px;
+        border-color: rgba(0, 0, 0, 1);
+        /* width: auto; */
+        /* display: inline-block; */
+        /* width: 75%; */
+        /* overflow: hidden; */
+    }
+
+    #search-artwork {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        margin: 0 0 5px 0;
+    }
+
+    strong {
+        text-decoration: underline;
+    }
+    
+#hero-nav {
+    grid-area: nav; 
+    /* height: 65px; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: space-between;
+    gap: 10px;
+}
+    #rating-div {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* #hero-nav > * {
+        flex: 1 1 auto;
+    }
+
+    #hero-nav > .artwork-nav-left-right {
+        flex: 0 1 auto;
+    } */
+    
+/* ------------------------- CURRENT PROGRESS ------------------------- */
+
+/* --------------------
+      COLLECTIONS
+-------------------- */
 
 .header {
     display: flex;
@@ -70,6 +233,7 @@ button {
     align-items: stretch;
     align-content: space-between;
     gap: 10px;
+    height: ;
 }
 
 .header > * {
@@ -81,44 +245,8 @@ button {
     color: rebeccapurple;
 }
 
-#artwork-nav-grid {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: stretch;
-    align-content: space-between;
-    gap: 10px;
-}
-
-#artwork-nav-grid > * {
-    flex: 1 1 auto;
-}
-
-#artwork-nav-grid > .artwork-nav-left-right {
-    flex: 0 1 auto;
-}
-
-.gallery-grid {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: stretch;
-    align-content: space-between;
-    gap: 10px;
-}
-
-.gallery-grid > * {
-    flex: none;
-    width: 20%;
-}
-
-.gallery-grid > #gallery-middle {
-    flex-grow: 2;
-}
-
-#hero-img {
-    max-width:100%;
-    max-height:100%;
+#header {
+    height: 60px;
 }
 
 .collection-flex-grid {

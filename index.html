@@ -16,61 +16,59 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
     <body>
         <div id="page-header">
             <h1>CURATED</h1>
         </div>
-        <div id="gallery-container" class="card">
+        <div id="gallery-card" class="card">
             <div class="gallery-grid">
-                <div id="gallery-left">
-                    <div class="gallery-left-50">
-                        <h2>Filter Artwork</h2>
-                        <label for="musuem-select">Choose a Musesum:</label>
-                        <select name="musuem" id="museum-select">
-                            <option value="0">--All--</option>
-                        </select>
-                        <button id="search-artwork">Search</button>
-                    </div>
-                    <div class="gallery-left-50">
-                        <h2>Default Collection</h2>
-                        <label for="collection-select">Choose a Collection:</label>
-                        <select name="collection" id="collection-select">
-                        </select>
-                    </div>
-                </div>
-                <div id="gallery-middle">
-                    <div id="hero-title" class="header"></div>
-                    <div id="hero-div">
-                        <img id="hero-img" src="https://via.placeholder.com/800x550/FF00000.jpg?text=1">
-                    </div>
-                    <div id="artwork-nav-grid">
-                        <div class="artwork-nav-left-right">
-                            <button id="nav-left" class="left-right-button">←</button>
-                        </div>
-                        <div id="artwork-nav-rating">
-                            <!-- <label for="rating-select">rating</label> -->
-                            <select name="rating" id="rating-select">
-                                <option value="0">☆☆☆☆☆</option>
-                                <option value="1">★☆☆☆☆</option>
-                                <option value="2">★★☆☆☆</option>
-                                <option value="3">★★★☆☆</option>
-                                <option value="4">★★★★☆</option>
-                                <option value="5">★★★★★</option>
-                            </select>
-                        </div>
-                        <div id="artwork-nav-save">
-                            <button id="save-to-collection">Save to collection</button>
-                        </div>
-                        <div class="artwork-nav-left-right">
-                            <button id="nav-right" class="left-right-button">→</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="gallery-right">
-                    <h2>Artwork Info</h2>
+                <div id="hero-title"><p></p></div>
+                <div id="hero-info">
+                    <h2 class="gallery-detail-title">ARTWORK INFO</h2>
                     <ul id="artwork-info-list">
                     </ul>
+                </div>
+                <div id="hero-div">
+                    <img id="hero-img" src="">
+                </div>
+                <div id="museum-div">
+                    <!-- <h2 class="museum-title">Museum</h2> -->
+                    <label for="musuem-select">Filter by Musesum:</label>
+                    <div class="custom-select">
+                        <select name="musuem" id="museum-select">
+                            <option value="0">--All--</option> 
+                        </select>
+                    </div>
+                    <button id="search-artwork">Search</button>
+                </div>
+                <div id="hero-nav">
+                    <div>
+                        <button id="nav-left" class="left-right-button">←</button>
+                    </div>
+                    <div class="rating-div">
+                        <label for="rating-select">Rating</label>
+                        <select name="rating" id="rating-select">
+                            <option value="0">☆☆☆☆☆</option>
+                            <option value="1">★☆☆☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </div>
+                    <div>
+                        <!-- <label for="collection-select">Choose a Collection:</label> -->
+                        <div class="custom-select">
+                            <select name="collection" id="collection-select">
+                            </select>
+                        </div>
+                        <button id="save-to-collection">Save to collection</button>
+                    </div>
+                    <div>
+                        <button id="nav-right" class="left-right-button">→</button>
+                    </div>
                 </div>
             </div>  
         </div>
