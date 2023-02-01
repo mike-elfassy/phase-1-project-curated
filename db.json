@@ -10,7 +10,7 @@
       "medium": "oil",
       "museum": "Tate Britain",
       "accession_number": "N06065",
-      "rating": "0",
+      "rating": "2",
       "file": {
         "title": "'Cloud Study', by John Constable, 1822, Tate Britain.JPG",
         "file_description_url": "//commons.wikimedia.org/wiki/File:%27Cloud_Study%27,_by_John_Constable,_1822,_Tate_Britain.JPG",
@@ -489,7 +489,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "715",
-      "rating": null,
+      "rating": "1",
       "file": {
         "title": "Claude Monet - The Magpie - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
@@ -666,27 +666,17 @@
       "name": "First Favorites",
       "artworkIds": [
         13,
-        6,
-        1
+        2,
+        5
       ]
     },
     {
-      "name": "test5",
+      "id": 3,
+      "name": "Second Favorites",
       "artworkIds": [
-        1,
-        3,
-        5
-      ],
-      "id": 5
-    },
-    {
-      "name": "test4",
-      "artworkIds": [
-        7,
         10,
-        12
-      ],
-      "id": 4
+        13
+      ]
     }
   ]
 }

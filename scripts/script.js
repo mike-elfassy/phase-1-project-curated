@@ -50,7 +50,7 @@ const apiGetCollections = function() {
         
         // Populate collection selctOptions & collection container
         let collectionsSelectNode = document.querySelector('select#collection-select')
-        let collectionContainerNode = document.querySelector('div#collections-container')
+        let collectionContainerNode = document.querySelector('div#collections-card')
         collections.forEach(collection => {
             collectionsSelectNode.appendChild(createNodeSelectOption(collection))
             collectionContainerNode.appendChild(createNodeCollectionCard(collection))
@@ -93,7 +93,7 @@ const apiPostCollection = function(collectionName = 'New Collection') {
     .then (collection => {
         // Append to collection selctOptions
         let collectionsSelectNode = document.querySelector('select#collection-select')
-        let collectionContainerNode = document.querySelector('div#collections-container')
+        let collectionContainerNode = document.querySelector('div#collections-card')
         // Append to collection container
         collectionsSelectNode.appendChild(createNodeSelectOption(collection))
         collectionContainerNode.appendChild(createNodeCollectionCard(collection))
@@ -255,10 +255,8 @@ const createNodeCollectionArtwork = function(artworkId) {
         <div class="collection-artwork-image">
             <img class="collection-artwork-image" src="">
         </div>
-        <div class="collection-artwork-detail">
-            <div class="collection-artwork-rating"></div>
-            <button class="delete-button">X</button>
-        </div>
+        <div class="collection-artwork-rating"></div>
+        <button class="delete-button">x</button>
     `)
     newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
     newArtworkNode.querySelector('div.collection-artwork-rating').innerText = ratingToStars(newArtwork.rating || 0)
@@ -269,17 +267,17 @@ const createNodeCollectionArtwork = function(artworkId) {
 
 // DOM: Populate Collection Container with new collection cards
 const createNodeCollectionCard = function(collection) {
-    // let collectionContainerNode = document.getElementById('collections-container')
+    // let collectionContainerNode = document.getElementById('collections-card')
     
     // Create collection card
     let newCollectionCardNode = document.createElement('div')
     newCollectionCardNode.id = `collection-card-${collection.id}`
     newCollectionCardNode.className = 'collections-card'
     newCollectionCardNode.innerHTML = (`
-            <div class="header collection-header">
+            <div class="collection-card-header">
                 <h2 class="collection-name"></h2>
-                <input class="collection-name-input" style="display:none"></input>
-                <button class="edit-collection">Edit</button>
+                <input class="collection-name-input" style="display:none" onfocus="this.value=''"></input>
+                <button class="edit-collection">✎</button>
                 <button class="cancel-collection" style="display:none">Cancel</button>
                 <button class="rename-collection" style="display:none">Rename</button>
                 <button class="delete-collection">X</button>

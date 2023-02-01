@@ -36,8 +36,8 @@ div {
 }
 
 .card {
-    margin: 5px;
-    padding: 5px;
+    margin: 15px;
+    padding: 15px;
     
     background-color: rgb(255, 255, 255);
 
@@ -49,7 +49,7 @@ div {
 }
 
 button {
-    margin: 5px auto;
+    margin: auto;
     padding: 5px 15px;
     
     background-color: rgba(0, 0, 0, 1);
@@ -90,13 +90,13 @@ button {
 
 #gallery-card {
     height: 400px;
-    padding: 10px;
+    padding: 15px;
 }
 
 .gallery-grid {
     display: inline-grid;
     grid-template-columns: [first] 25% [second] auto [end];
-    grid-template-rows: [first] 40px [second] 260px [third] 80px [end];
+    grid-template-rows: [first] 40px [second] 280px [third] 60px [end];
     grid-template-areas:
         "header header"
         "info hero"
@@ -108,6 +108,7 @@ button {
     align-items: stretch;
     justify-content: stretch;
     align-content: stretch;
+    width: 100%;
 }
 
 /* --------------------
@@ -136,8 +137,22 @@ button {
 }
 
     #hero-info h2 {
-        margin: 0 0 10px 0;
+        margin: 0 0 15px 0;
         /* text-decoration: underline; */
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        margin: 0 0 8px 0;
+    }
+
+    strong {
+        text-decoration: underline;
     }
 
 #hero-div {
@@ -152,10 +167,14 @@ button {
         height: 100%;
         vertical-align: center;
         max-width: 100%;
+        border-width: 1px;
+        border-color: rgba(0, 0, 0, 1);
+        border-style: solid;
 }
 
 #museum-div {
     grid-area: museum;
+    align-self: end;
 }
 
     .museum-title {
@@ -166,6 +185,7 @@ button {
     }
 
     .custom-select {
+        margin: 0 0 5px 0;
         border-width: 1px;
         border-radius: 2px;
         border-color: rgba(0, 0, 0, 1);
@@ -181,20 +201,6 @@ button {
 
     select {
         width: 100%;
-    }
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    ul li {
-        margin: 0 0 5px 0;
-    }
-
-    strong {
-        text-decoration: underline;
     }
     
 #hero-nav {
@@ -220,65 +226,156 @@ button {
         flex: 0 1 auto;
     } */
     
-/* ------------------------- CURRENT PROGRESS ------------------------- */
-
+    
 /* --------------------
-      COLLECTIONS
+  COLLECTIONS GENERAL
 -------------------- */
 
-.header {
+.collections-header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     align-content: space-between;
     gap: 10px;
-    height: ;
+    
+    border-width: 0 0 1px 0;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    
+    margin: 0 0 15px 0;
 }
 
-.header > * {
-    flex: none;
-    background-color: aquamarine;
+.collection-title {
+    grid-area: header;
+    font-size: 140%;
+    
+    line-height: 40px;
+    /* align-content: center; */
+    text-align: center;
 }
 
-.header.subheader {
-    color: rebeccapurple;
+.collections-header button {
+    margin: 0px;
+    height: 30px;
 }
 
-#header {
-    height: 60px;
+/* --------------------
+   COLLECTIONS CARD
+-------------------- */
+
+
+.collections-card {
+    margin: 10px 0;
+    padding: 10px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
+}
+
+.collection-card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+    gap: 10px;
+    margin: auto auto 15px auto;
+}
+
+.collection-card-header * {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 125%;
+}
+
+.collection-card-header button {
+    height: 30px;
+    font-size: 100%;
+}
+
+button.delete-collection {
+    align-self: flex-end;
+    flex-shrink: 1;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: rgb(255, 0, 0);
+}
+
+button.edit-collection {
+    background: transparent;
+    border-width: 0;
+    color: rgba(0, 0, 0, 1);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.collection-name-input {
+    border-width: 0 0 1px 0;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    color: rgb(130, 130, 130);
+    font-style: italic;
+    width: 300px;
 }
 
 .collection-flex-grid {
     display: flex;
-    flex-flow: row wrap;
     justify-content: flex-start;
-    align-items: stretch;
-    align-content: space-between;
+    align-items: center;
+    align-content: stretch;
     gap: 10px;
 }
 
-.collection-item {
-    flex: none;
+.collection-artwork {
+    /* border-width: 1px;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1); */
+    padding: 5px;
+    margin: 5px;
+    width: 150px;
+    height: 120px;
+    position: relative;
 }
 
-.collection-item-detail {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: space-between;
-    gap: 10px;
+.collection-artwork button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2px;
+    padding: 2px 5px;
+    height: auto;
+    width: auto;
+    font-size: 75%;
+    background-color: rgb(190, 190, 190);
+    color: rgba(0, 0, 0, 1);
+    align-items: center;
+    text-align: center;
+    border-color: rgba(0, 0, 0, 1);
+    border-width: 1px;
+    border-style: solid;
 }
 
-.collection-item-detail-rating {
-    flex: none;
+div.collection-artwork-image {
+    width: 150px;
+    height: 95px;
+    align-content: center;
 }
 
-.collection-item-detail-delete {
-    flex: none;
+.collection-artwork-rating {
+    position: absolute;
+    bottom: 5px;
+    left: 38px;
 }
 
 img.collection-artwork-image {
-    max-width: 50px;
+    height: 95px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-color: rgba(0, 0, 0, 1);
+    border-width: 1px;
+    border-style: solid;
+
 }
