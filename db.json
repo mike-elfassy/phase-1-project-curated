@@ -91,7 +91,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N00558 (Tate) NG558 (National Gallery)",
-      "rating": 1,
+      "rating": 0,
       "file": {
         "title": "Joseph Mallord William Turner - A Disaster at Sea - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg",
@@ -210,7 +210,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "78696",
-      "rating": 1,
+      "rating": 0,
       "file": {
         "title": "Vincent van Gogh - Starry Night - Google Art Project 2.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg",
@@ -257,7 +257,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N01615",
-      "rating": 3,
+      "rating": 0,
       "file": {
         "title": "John Singer Sargent - Carnation, Lily, Lily, Rose - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:John_Singer_Sargent_-_Carnation,_Lily,_Lily,_Rose_-_Google_Art_Project.jpg",
@@ -334,7 +334,7 @@
       "date": "circa 1485",
       "medium": "oil on oak wood",
       "museum": "Musée des Beaux-Arts de Strasbourg",
-      "rating": 4,
+      "rating": 1,
       "file": {
         "title": "Memling Vanity and Salvation.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Memling_Vanity_and_Salvation.jpg",
@@ -409,7 +409,7 @@
       "description": "Français : Adolphe Kirstein, L'Orage (1872)Huile sur toileMusée des Beaux-Arts de Strasbourg. Inv. 1378.Acquis en 1934",
       "date": "1872",
       "museum": "Musée des Beaux-Arts de Strasbourg",
-      "rating": 5,
+      "rating": 1,
       "file": {
         "title": "Adolphe Kirstein-L'Orage-Musée des Beaux-Arts de Strasbourg.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Adolphe_Kirstein-L%27Orage-Mus%C3%A9e_des_Beaux-Arts_de_Strasbourg.jpg",
@@ -489,7 +489,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "715",
-      "rating": 4,
+      "rating": 5,
       "file": {
         "title": "Claude Monet - The Magpie - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
@@ -608,7 +608,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "RF 2006 24 (Musée d'Orsay)",
-      "rating": 5,
+      "rating": 2,
       "file": {
         "title": "André Devambez - Le seul oiseau qui vole au dessus des nuages - 1910 - Musee d'Orsay.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg",
@@ -660,27 +660,20 @@
       "artworkIds": [
         1,
         13,
-        6,
-        2,
-        3
+        6
       ]
     },
     {
       "id": 2,
-      "name": "First Favorites",
+      "name": "Atomospheric Paintings",
       "artworkIds": [
-        13,
-        2,
         1,
-        12
+        16,
+        3,
+        5,
+        6,
+        11
       ]
-    },
-    {
-      "name": "Katie's Favs",
-      "artworkIds": [
-        2
-      ],
-      "id": 3
     }
   ]
 }
