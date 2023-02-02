@@ -111,10 +111,9 @@ const apiPostCollection = function(collectionName = 'New Collection') {
     })
     .then (response => response.json())
     .then (collection => {
-        // Append to collection selctOptions
+        // Append to collection selctOptions & Collection container
         let collectionsSelectNode = document.querySelector('select#collection-select')
         let collectionContainerNode = document.querySelector('div#collections-card')
-        // Append to collection container
         collectionsSelectNode.appendChild(createNodeSelectOption(collection))
         collectionContainerNode.appendChild(createNodeCollectionCard(collection))
     })
@@ -150,9 +149,13 @@ const apiPatchCollection = function(collectionId = null, collectionPatchObj = nu
     })
     .then (response => response.json())
     .then (collection => {
-        // Rename collection card on the DOM
+        // Rename collection card and selectOption
         let collectionCardNode = document.getElementById(`collection-card-${collectionId}`)
+        let collectionsSelectNodeOption = document.querySelector(`#collection-select option[value="${collectionId}"]`)
+        
         collectionCardNode.querySelector('.collection-name').innerText = collection.name
+        collectionsSelectNodeOption.innerText = collection.name
+
         // Toggle edit visibility
         toggleCollectionCardNode(collectionCardNode, false)
     })
@@ -483,7 +486,7 @@ const handleNav = function(event) {
     }
     else {return}
     // Update Hero Image
-    localArtworkCurrentIndex = calculateNewArtworkListIndex(localArtworkCurrentIndex, direction)
+    localArtworkCurrentIndex = parseInt(calculateNewArtworkListIndex(localArtworkCurrentIndex, direction))
     populateHero(localArtworkList[localArtworkCurrentIndex])
 }
 
@@ -502,6 +505,8 @@ const handleRenameCollection = function(event) {
     let collectionNameInput = collectionCardNode.querySelector('.collection-name-input').value
     let collectionPatchObj = {name: collectionNameInput}
 
+    collectionId = parseInt(collectionId)
+
     apiPatchCollection(collectionId, collectionPatchObj)
 }
 
@@ -513,14 +518,16 @@ const handleEditCollection = function(event) {
 const handleDeleteCollection = function(event) {
     let collectionCardNode = event.target.parentNode.parentNode
     let collectionId = collectionCardNode.id.substring(16)
+    collectionId = parseInt(collectionId)
     apiDeleteCollection(collectionId)
 }
 
 const handleDeleteArtworkFromCollection = function(event) {
-    let collectionArtworkNode = event.target.parentNode.parentNode
+    let collectionArtworkNode = event.target.parentNode
     let artworkId = collectionArtworkNode.id.substring(19)
     let collectionId = collectionArtworkNode.parentNode.parentNode.id.substring(16)
-
+    artworkId = parseInt(artworkId)
+    collectionId = parseInt(collectionId)
     apiGetDeleteCollectionArtworkId(collectionId, artworkId)
 }
 
@@ -528,18 +535,20 @@ const handleSaveToCollection = function(event) {
     let collectionId = document.getElementById('collection-select').value
     let artworkId = document.getElementById('hero-title').getAttribute('artwork-id')
     artworkId = parseInt(artworkId)
+    collectionId = parseInt(collectionId)
     apiGetPatchCollectionArtworkIds(collectionId, artworkId)
 }
 
 const handleRateArtwork = function(event) {
     let artworkId = event.target.parentNode.parentNode.parentNode.querySelector('#hero-title').getAttribute('artwork-id')
     let newRating = event.target.value
+    artworkId = parseInt(artworkId)
     apiPatchArtworkRating(artworkId, newRating)
 }
 
 const handleCollectionArtworkClick = function(event) {
     let artworkId = event.target.parentNode.parentNode.id.substring(19)
-
+    artworkId = parseInt(artworkId)
     apiGetArtwork(parseInt(artworkId))
 }
 
@@ -562,5 +571,8 @@ document.getElementById('search-artwork').addEventListener('click', handleSearch
 document.querySelectorAll('button.left-right-button').forEach(node => node.addEventListener('click', handleNav))
 addEventListener('keydown', handleNav)
 
-// Create Collection
+// Save to Collection
 document.getElementById('save-to-collection').addEventListener('click', handleSaveToCollection)
+
+// Create Collection
+document.getElementById('create-collection').addEventListener('click', handleCreateCollection)
