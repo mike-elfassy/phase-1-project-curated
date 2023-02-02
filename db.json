@@ -10,7 +10,7 @@
       "medium": "oil",
       "museum": "Tate Britain",
       "accession_number": "N06065",
-      "rating": "2",
+      "rating": 3,
       "file": {
         "title": "'Cloud Study', by John Constable, 1822, Tate Britain.JPG",
         "file_description_url": "//commons.wikimedia.org/wiki/File:%27Cloud_Study%27,_by_John_Constable,_1822,_Tate_Britain.JPG",
@@ -50,7 +50,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N01543",
-      "rating": "3",
+      "rating": 3,
       "file": {
         "title": "John William Waterhouse - The Lady of Shalott - Google Art Project edit.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
@@ -91,7 +91,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N00558 (Tate) NG558 (National Gallery)",
-      "rating": "1",
+      "rating": 1,
       "file": {
         "title": "Joseph Mallord William Turner - A Disaster at Sea - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_A_Disaster_at_Sea_-_Google_Art_Project.jpg",
@@ -131,7 +131,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N05064",
-      "rating": null,
+      "rating": 2,
       "file": {
         "title": "Dante Gabriel Rossetti - Proserpine - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Dante_Gabriel_Rossetti_-_Proserpine_-_Google_Art_Project.jpg",
@@ -170,7 +170,7 @@
       "medium": "oil on canvas",
       "museum": "Musée des Beaux-Arts de Strasbourg",
       "accession_number": "T00772 (Tate Britain)",
-      "rating": "1",
+      "rating": 1,
       "file": {
         "title": "Phillip James De Loutherbourg - An Avalanche in the Alps - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg",
@@ -210,7 +210,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "78696",
-      "rating": null,
+      "rating": 1,
       "file": {
         "title": "Vincent van Gogh - Starry Night - Google Art Project 2.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project_2.jpg",
@@ -257,7 +257,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N01615",
-      "rating": "1",
+      "rating": 3,
       "file": {
         "title": "John Singer Sargent - Carnation, Lily, Lily, Rose - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:John_Singer_Sargent_-_Carnation,_Lily,_Lily,_Rose_-_Google_Art_Project.jpg",
@@ -334,7 +334,7 @@
       "date": "circa 1485",
       "medium": "oil on oak wood",
       "museum": "Musée des Beaux-Arts de Strasbourg",
-      "rating": null,
+      "rating": 4,
       "file": {
         "title": "Memling Vanity and Salvation.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Memling_Vanity_and_Salvation.jpg",
@@ -489,7 +489,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "715",
-      "rating": "1",
+      "rating": 3,
       "file": {
         "title": "Claude Monet - The Magpie - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
@@ -658,7 +658,11 @@
       "id": 1,
       "name": "Default",
       "artworkIds": [
-        1
+        1,
+        13,
+        6,
+        2,
+        4
       ]
     },
     {
@@ -667,15 +671,8 @@
       "artworkIds": [
         13,
         2,
-        5
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Second Favorites",
-      "artworkIds": [
-        10,
-        13
+        5,
+        1
       ]
     }
   ]

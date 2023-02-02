@@ -89,7 +89,7 @@ button {
 -------------------- */
 
 #gallery-card {
-    height: 400px;
+    height: 410px;
     padding: 15px;
 }
 
@@ -103,7 +103,7 @@ button {
         "museum nav"    
     ;
     column-gap: 10px;
-    row-gap: 10px;
+    row-gap: 15px;
     justify-items: stretch;
     align-items: stretch;
     justify-content: stretch;
@@ -124,6 +124,7 @@ button {
     text-align: center;
     border-width: 0 0 1px 0;
     border-style: solid;
+    margin-top: -5px;
 }
 
     #hero-title > p {
@@ -174,7 +175,7 @@ button {
 
 #museum-div {
     grid-area: museum;
-    align-self: end;
+    align-self: start;
 }
 
     .museum-title {
@@ -185,7 +186,7 @@ button {
     }
 
     .custom-select {
-        margin: 0 0 5px 0;
+        /* margin: 0 0 5px 0; */
         border-width: 1px;
         border-radius: 2px;
         border-color: rgba(0, 0, 0, 1);
@@ -201,6 +202,9 @@ button {
 
     select {
         width: 100%;
+        text-align-last: center;
+        text-align: center;
+        margin-top: 5px;
     }
     
 #hero-nav {
@@ -209,13 +213,17 @@ button {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     align-content: space-between;
-    gap: 10px;
+    gap: 15px;
 }
     #rating-div {
         align-items: center;
         text-align: center;
+    }
+
+    #rating-select {
+        margin-bottom: 5px;
     }
 
     /* #hero-nav > * {
@@ -321,6 +329,7 @@ button.edit-collection {
 
 .collection-flex-grid {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     align-content: stretch;
@@ -344,17 +353,18 @@ button.edit-collection {
     top: 0;
     right: 0;
     margin: 2px;
-    padding: 2px 5px;
+    padding: 2px 6px;
     height: auto;
     width: auto;
     font-size: 75%;
-    background-color: rgb(190, 190, 190);
+    background-color: rgb(227, 227, 227);
     color: rgba(0, 0, 0, 1);
     align-items: center;
     text-align: center;
-    border-color: rgba(0, 0, 0, 1);
+    /* border-color: rgba(0, 0, 0, 1);
     border-width: 1px;
-    border-style: solid;
+    border-style: solid; */
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1)
 }
 
 div.collection-artwork-image {

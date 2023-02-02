@@ -58,6 +58,20 @@ const apiGetCollections = function() {
     })
 }
 
+// API GET: Query artwork and populate gallery hero
+const apiGetArtwork = function(artworkId) {    
+    fetch (`${curatedApi}/artworks/${artworkId}`, {
+        method: 'GET',
+        headers: requestHeaders
+    })
+    .then (response => response.json())
+    .then (artwork => {
+        // Populate Gallery Hero
+        populateHero(artwork)
+    })
+    .catch (error => console.error(`${error.message}`))
+}
+
 // API GET: Query artworks (optional musem filter), save a local copy of array, and populate gallery hero
 const apiGetArtworks = function(museumName = 'all') {
     let searchQuery = ''
@@ -71,7 +85,13 @@ const apiGetArtworks = function(museumName = 'all') {
     .then (artworks => {
         // Save a local copy of artwork array
         localArtworkList = [...artworks]
-        localArtworkCurrentIndex = 0
+        // Random Start
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        localArtworkCurrentIndex = getRandomInt(0, localArtworkList.length - 1)
 
         // Populate Gallery Hero
         populateHero(localArtworkList[localArtworkCurrentIndex])
@@ -215,7 +235,7 @@ const apiGetDeleteCollectionArtworkId = function(collectionId, deleteArtworkId) 
 
 // API PATCH: Update artwork rating
 const apiPatchArtworkRating = function(artworkId, newRating) {
-    let ratingPatchObj = {rating: newRating}
+    let ratingPatchObj = {rating: parseInt(newRating)}
     fetch (`${curatedApi}/artworks/${artworkId}`, {
         method: 'PATCH',
         headers: requestHeaders,
@@ -245,7 +265,8 @@ const createNodeSelectOption = function(obj) {
 // DOM: Add single artwork to collection grid
 const createNodeCollectionArtwork = function(artworkId) {
     // Get artwork object
-    let newArtwork = localArtworkList.find(artwork => artwork.id === artworkId)
+    let newArtwork = Object.assign({},localArtworkList.find(artwork => artwork.id === artworkId))
+    // let newArtwork = localArtworkList.find(artwork => artwork.id === artworkId)
     
     // Create Node Object
     let newArtworkNode = document.createElement('div')
@@ -260,6 +281,8 @@ const createNodeCollectionArtwork = function(artworkId) {
     `)
     newArtworkNode.querySelector('img').src = newArtwork.file.preferred.url
     newArtworkNode.querySelector('div.collection-artwork-rating').innerText = ratingToStars(newArtwork.rating || 0)
+    
+    newArtworkNode.querySelector('img').addEventListener('click', handleCollectionArtworkClick)
     newArtworkNode.querySelector('button.delete-button').addEventListener('click', handleDeleteArtworkFromCollection)
     
     return newArtworkNode
@@ -285,7 +308,7 @@ const createNodeCollectionCard = function(collection) {
             <div class="collection-flex-grid"></div>
     `)
     newCollectionCardNode.querySelector('h2').innerText = collection.name
-    newCollectionCardNode.querySelector('input').value = collection.name
+    // newCollectionCardNode.querySelector('input').value = collection.name
 
     // Iterate over collections artworks and append art to grid
     let collectionGrid = newCollectionCardNode.querySelector('div.collection-flex-grid')
@@ -312,6 +335,7 @@ const createNodeCollectionCard = function(collection) {
 
 // DOM: Upate the DOM to have a particular artwork in focus. Takes array+index or individual artwork
 const populateHero = function(artworks, arrIndex = 0) {
+    // debugger 
     // Handle object vs array
     let newArtworks = []
     if (!Array.isArray(artworks)) {newArtworks.push(artworks)}
@@ -414,6 +438,8 @@ const toggleCollectionCardNode = function(collectionCardNode, showInput = false)
     let renameCollectionNode = collectionCardNode.querySelector('button.rename-collection')
     let cancelCollectionNode = collectionCardNode.querySelector('button.cancel-collection')
 
+    collectionNameInputNode.value = collectionNameNode.innerText
+
     if (showInput) {
         collectionNameNode.style.display = 'none'
         collectionNameInputNode.style.display = 'block'
@@ -509,6 +535,12 @@ const handleRateArtwork = function(event) {
     let artworkId = event.target.parentNode.parentNode.parentNode.querySelector('#hero-title').getAttribute('artwork-id')
     let newRating = event.target.value
     apiPatchArtworkRating(artworkId, newRating)
+}
+
+const handleCollectionArtworkClick = function(event) {
+    let artworkId = event.target.parentNode.parentNode.id.substring(19)
+
+    apiGetArtwork(parseInt(artworkId))
 }
 
 // --------------------
