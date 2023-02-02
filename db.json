@@ -50,7 +50,7 @@
       "medium": "oil on canvas",
       "museum": "Tate Britain",
       "accession_number": "N01543",
-      "rating": 3,
+      "rating": 5,
       "file": {
         "title": "John William Waterhouse - The Lady of Shalott - Google Art Project edit.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
@@ -170,7 +170,7 @@
       "medium": "oil on canvas",
       "museum": "Musée des Beaux-Arts de Strasbourg",
       "accession_number": "T00772 (Tate Britain)",
-      "rating": 1,
+      "rating": 3,
       "file": {
         "title": "Phillip James De Loutherbourg - An Avalanche in the Alps - Google Art Project.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Phillip_James_De_Loutherbourg_-_An_Avalanche_in_the_Alps_-_Google_Art_Project.jpg",
@@ -608,7 +608,7 @@
       "medium": "oil on canvas",
       "museum": "Musée d'Orsay",
       "accession_number": "RF 2006 24 (Musée d'Orsay)",
-      "rating": null,
+      "rating": 5,
       "file": {
         "title": "André Devambez - Le seul oiseau qui vole au dessus des nuages - 1910 - Musee d'Orsay.jpg",
         "file_description_url": "//commons.wikimedia.org/wiki/File:Andr%C3%A9_Devambez_-_Le_seul_oiseau_qui_vole_au_dessus_des_nuages_-_1910_-_Musee_d%27Orsay.jpg",
@@ -671,10 +671,16 @@
       "artworkIds": [
         13,
         2,
-        5,
         1,
         12
       ]
+    },
+    {
+      "name": "Katie's Favs",
+      "artworkIds": [
+        2
+      ],
+      "id": 3
     }
   ]
 }
