@@ -64,6 +64,10 @@ button {
     cursor: pointer;
 }
 
+button#save-to-collection {
+    width: 100%;
+}
+
 /* --------------------
     Page Header
 -------------------- */

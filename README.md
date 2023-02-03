@@ -1,47 +1,61 @@
 # Curated
 
-README for Michael Elfassy’s Phase-1 Project
+## Description
 
-## Brief
-The ‘Curated’ web app will display artwork one-by-one and allow users to ‘rate’ the piece and/or save it to a ‘collection’. Collections will be displayed lower down on the page and users may choose to use a default collection or create their own. Users will search through artwork by utilizing a picklist and will be able to skip artwork if they choose not to rate or save it.
+‘Curated’ is a single page web app that displays artwork one-by-one and invites users to ‘rate’ the piece and/or save it to a ‘collection’. Collections are displayed lower down on the page and users may choose to use a default collection or create their own.
+
+This project is intended as a phase-1 submission for the Flatiron School's Software Engineering currculum.
+
+## Features & Usage
+
+[![Video walkthrough of Curated app](https://cdn.loom.com/sessions/thumbnails/d98c59ee811546118cb266a68d5c9375-with-play.gif)](https://www.loom.com/share/d98c59ee811546118cb266a68d5c9375)
+
+
+
+## Installation
+
+This web application requires a local JSON server to run a local databse and REST API. Follow these instructions to run the web app locally:
+1. Download the codebase from this repository to a local computer
+2. Install JSON Server if it does not exist. Instructions can be found https://www.npmjs.com/package/json-server
+3. Start the JSON Server by navigating to the local directory where this repository is saved and running this command in a terminal application: `$ json-server --watch db.json`
+4. Verify that JSON Server is using this port `http://localhost:3000/` by navigating there in your browser.
+5. Visit the Curated web-page in your browser here: https://mike-elfassy.github.io/phase-1-project-curated/
+
+## Support
+
+Reach out to me via email for any questions, comments, or feedback. 
+
+## Roadmap
+
+1. To-do's
+    * Bug fix: Include most recent artwork rating when saving to collections
+    * Use async + await on API calls instead of nesting dom manipulation within in API functions
+    * Zoom/fullscreen button to view larger high res image 
+    * Ability to name a collection on create
+    * Better handling of local copies of db
+2. Nice-to-have
+    * Refactor code & better handling of local cach
+    * Prevent delete ‘default’ collection via backend
+    * Sorting: collections, artworks, etc
+    * Optimize for widescreen layout (stack items)
+    * User input box to search artworks
+    * Collapsible collections
+3. Stretch-goals
+    * Handle pagination
+    * Overall design update
+    * Update rating on collection artwork items without page refresh
+    * User profiles for saved collections
+4. Super-stretch goals
+    * Use AirTable as a cloud database for these collections and/or existing artwork db
+    * User can add additional tags to artwork
+    * Frame finder: try out different artwork frames
+    * Auto-populate collections based on year/style/etc
+
+
+## Project status
+
+This project is complete as of February 2, 2023 and there are no plans for further development
+
+## Authors and acknowledgment
 
 The artwork database is seeding with images and descriptions from Wikimedia Commons
-
-## Goals
-Users will select a search criteria via a picklist: all, Tate Britain, Musée d'Orsay, Musée des Beaux-Arts de Strasbourg
-Users can ‘save’ or ‘skip’ and/or ‘rate’ an artwork
-Items can be saved to a default collection “Saved” or to user created collections
-Skipping an artwork will display the next image on the page
-Users can create, delete, or rename ‘collections’
-Collections will be collapsible and utilize the thumbnail image
-All updates: ratings, collections, artworks within a collection will be persisted to the database
-The database is global and has no notion of user profiles
-Challenges
-
-## Project Requirements
-* API: Local json-server
-* Event Listeners:
-  * Input: Pick a museum
-  * Submit: API fetch call to Wikimedia Commons
-  * Click: Save or Skip artwork
-  * Keyboard shortcuts: Save or skip artwork
-  * Fullscreen?
-  * Download?
-* Array iteration: Not sure yet, but will certainly need this
-
-## Stretch Goals
-* Nice-to-have
-  * Keyboard Left or right to move through images
-  * Aspect ratio warning (i.e. “This image is heavily cropped!”)
-  * User input to search artworks
-  * Clicking an artwork in a collection moves it to the selection pane
-* Possible
-  * List of artworks shown to user will be filtered against saved artwork so photos won’t be shown twice despite page refresh
-  * Sort collections based on rating
-  * User profiles for saved collections
-  * Manage collections (delete artworks, change rating, etc.)
-* Super-stretch
-  * Use AirTable as a cloud database for these collections
-  * User can add additional tags to artwork before saving
-  * Frame finder: try out different artwork frames
-  * Auto-populate collections based on year/style/etc
