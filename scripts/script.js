@@ -576,5 +576,3 @@ document.getElementById('save-to-collection').addEventListener('click', handleSa
 
 // Create Collection
 document.getElementById('create-collection').addEventListener('click', handleCreateCollection)
-
-// Noop
